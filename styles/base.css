@@ -7,9 +7,9 @@
 }
 
 :root {
-    --primary-color: #32CD32;
-    --secondary-color: #f44336;
-    --accent-color: #ff9800;
+   --primary-color: #0a192f;
+    --secondary-color: #172a45;
+    --accent-color: #2ecc71;
     --text-color: #222222;
     --white: #ffffff;
 }
@@ -48,9 +48,12 @@ nav a {
 
 nav a:hover {
     background-color: var(--accent-color);
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
+.active {
+    color: var(--accent-color);
+}
 main {
     max-width: 1000px;
     margin: 2rem auto;
