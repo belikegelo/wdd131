@@ -3,9 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TEST PAGE</title>
+    <title>WDD 131 - Dynamic Web Fundamentals - Angelo Antimo</title>
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - Angelo Antimo , a web development projects and a personal info">
+    <meta name="author" content="Angelo Antimo">
+    <link rel="stylesheet" href="styles/base.css">
+    <script src="scripts/getdates.js"></script>
 </head>
 <body>
-    <h1>TEST PAGE - Angelo </h1>  
+    <header>
+        <span id="course-title">WDD 131 - Dynamic Web Fundamentals</span>
+        <nav>
+            <a href="https://www.linkedin.com/in/angelo-antimo-262a57220/">LinkedIn</a>
+            <a href="https://byupw.instructure.com/">Canvas</a>
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/mosiah/14?lang=eng">Scriptures</a>
+            <a href="#">Final Project</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Angelo Antimo</h1>
+        <section class = "card"> 
+            <h2>About Me</h2>
+            <p>
+                My name is Angelo Antimo. I am a student at BYU-Idaho studying Web Development. 
+                I am currently working on my degree in Web Development and I am excited to learn more about the field.
+                I have a passion for web development and I am always looking for new ways to improve my skills. 
+                I am also interested in learning more about the latest web technologies and trends.
+            </p>
+            <img src="images/angelo.jpg" alt="Angelo Antimo" class="profile-image">
+        </section>
+         <section class="card">
+            <h2>Web Dev Resources</h2>
+
+            <p>
+                I am learning HTML, CSS, JavaScript, and modern web
+                development practices.
+            </p>
+
+            <img src="images/web-development.jpg" alt="Web development workspace">
+        </section>
+
+    </main>
+    <footer>
+        <p>
+            &copy; <span id="currentyear"></span> 🌱 Angelo Antimo 🌱 Cavite, Philippines
+        </p>
+
+        <p id="lastModified"></p>
+    </footer>
 </body>
 </html>
