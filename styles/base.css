@@ -96,9 +96,9 @@ main h1 {
     padding: 1rem;
 }
 
-.about-content p {
+/* .about-content p {
     flex: 1;
-}
+} */
 
 .profile-image {
     width: 180px;
@@ -120,6 +120,12 @@ footer {
     color: var(--accent-color);
     font-size: 0.8rem;
 }
+
+.last-modified {
+    color: var(--accent-color);
+    font-size: 0.85 rem;
+}
+
 
 /* for mobile */
 
