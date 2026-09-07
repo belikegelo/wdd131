@@ -115,7 +115,7 @@ main {
     text-align: center;
     margin: 1rem 2rem 0.5rem;
     padding-bottom: 0.4rem;
-    border-bottom: 1px solid #bbb;
+    border-bottom: 1px solid var(--secondary-color);
 }
 
 /* Cavite image and caption */
