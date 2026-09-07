@@ -1,8 +1,8 @@
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 :root {
@@ -14,81 +14,85 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+	font-family: "Play", sans-serif;
     color: var(--text-color);
-    line-height: 1.6;
-
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
-
 header {
     background-color: var(--primary-color);
     color: var(--white);
 }
 
+/* Header */
 #course-title {
+   
     display: block;
     text-align: center;
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
 }
 
 nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--secondary-color);
+	background-color: var(--secondary-color);
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+nav ul {
+	list-style-type: none;
 }
 
 nav a {
-    color: var(--white);
-    text-decoration: none;
-    padding: 1rem;
+	display: block;
+	color: var(--white);
+	text-align: center;
+	padding: 1rem;
+	text-decoration: none;
 }
 
 nav a:hover {
     background-color: var(--accent-color);
-    color: var(--primary-color);
+	text-decoration: overline;
 }
 
-.active {
-    color: var(--accent-color);
+/* Main */
+
+h1 {
+    font-family: "Press Start 2P", system-ui;
+	background-color: var(--white);
+	padding: 1rem;
+	font-size: 2rem;
+	text-align: center;
+    font-weight: 900;
 }
+
 main {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-
-    flex: 1;
-
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 1rem;
 }
-
-main h1 {
-    grid-column: 1 / -1;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
 .card {
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--secondary-color);
     border-radius: 8px;
     overflow: hidden;
+    margin-bottom: 1rem;
     background-color: var(--white);
 }
 
 .card h2 {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--white);
-    padding: 0.5rem;
     text-align: center;
+    padding: 0.7rem;
+    font-size: 1.1rem;
 }
 
+.card p {
+    padding: 1rem;
+    line-height: 1.6;
+}
+
+/* About Me image */
 .about-content {
     display: flex;
     align-items: center;
@@ -96,52 +100,118 @@ main h1 {
     padding: 1rem;
 }
 
-/* .about-content p {
+.about-content p {
+    padding: 0;
     flex: 1;
-} */
+}
 
 .profile-image {
-    width: 180px;
+    width: 150px;
     height: auto;
 }
- 
-.card ul { 
-    padding: 1rem 2rem; 
+
+/* Location heading */
+.card h3 {
+    text-align: center;
+    margin: 1rem 2rem 0.5rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid #bbb;
 }
 
+/* Cavite image and caption */
+figure {
+    float: left;
+    width: 150px;
+    margin: 1rem;
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 0.8rem;
+    font-style: italic;
+    padding-top: 0.3rem;
+}
+
+
+/* Web Development Resources */
+.resources ul {
+    padding: 2rem;
+}
+
+.resources li {
+    margin-bottom: 0.5rem;
+}
+.resources a {
+    color: var(--primary-color);
+}
+
+.resources a:hover {
+    color: var(--accent-color);
+}
+
+/* Footer */
 footer {
     background-color: var(--primary-color);
     color: var(--white);
     text-align: center;
-    padding: 1.5rem;
+    padding: 1rem;
+    margin-top: 1rem;
 }
 
-#lastModified {
-    color: var(--accent-color);
-    font-size: 0.8rem;
+footer p {
+    margin: 0.4rem;
 }
 
 .last-modified {
     color: var(--accent-color);
-    font-size: 0.85 rem;
+    font-size: 0.8rem;
 }
 
 
-/* for mobile */
 
-@media (max-width: 600px) {
+/* larger/wider views **************************/
+@media (min-width: 640px) {
     main {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 0.5rem;
     }
-    main h1 {
-        grid-column: auto;
+
+    h1 {
+        grid-column: 1 / -1;
     }
-    nav {
-        flex-direction: column;
-    }
-    .about-content {
-        flex-direction: column;
+
+    .card {
+        margin-bottom: 0;
+    }   
+	nav ul {
+		display: flex;
+	}
+
+	nav ul li {
+		flex: 1 0 auto; /* flex: [flex-grow] [flex-shrink] [flex-basis]; 
+		in this example, the items will not shrink but can grow to fill the space at natural content width*/
+
     }
 }
 
 
+@media (max-width: 639px) {
+
+
+
+    .about-content {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    figure {
+        float: none;
+        margin: 1rem auto;
+    }
+}
