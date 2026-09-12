@@ -1,0 +1,56 @@
+@media screen and (min-width: 500px) {
+    /* Header - Horizontal Layout */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    header h1 {
+        margin-bottom: 0;
+        font-size: 1.8rem;
+    }
+
+    /* Navigation - Horizontal */
+    nav ul {
+        display: flex !important;
+        flex-direction: row;
+        gap: 0.5rem;
+        background-color: transparent;
+        padding: 0;
+        margin-top: 0;
+    }
+
+    nav a {
+        padding: 0.5rem 1rem;
+    }
+
+    /* Hide Hamburger */
+    .hamburger {
+        display: none;
+    }
+
+    /* Main - 3 columns */
+    main {
+        max-width: 1200px;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    main h1 {
+        grid-column: 1 / -1;
+        font-size: 2.2rem;
+    }
+
+    main figure {
+        margin-bottom: 0;
+    }
+
+    /* Footer */
+    footer {
+        padding: 2rem;
+    }
+}
