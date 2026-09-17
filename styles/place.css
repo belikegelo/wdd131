@@ -9,7 +9,6 @@
     --blue: #0038A8;
     --red: #CE1126;
     --yellow: #FCD116;
-    --green: #138852;
     --white: #FFFFFF;
     --text-color: #222222;
     --light-blue: #EAF2FF;
@@ -21,6 +20,7 @@
 body {
     font-family: var(--font-body);
     color: var(--text-color);
+    background-color: var(--light-blue);
 }
 
 /* ---------- Header ---------- */
@@ -31,6 +31,8 @@ header {
     color: var(--white);
     background-color: var(--blue);
     border-bottom: 4px solid var(--yellow);
+    font-family: var(--font-heading);
+    font-size: x-small;
 }
 
 header h1 {
@@ -38,6 +40,7 @@ header h1 {
     margin: 0 auto;
     padding: 0.75rem;
     border: 2px solid var(--yellow);
+    
 }
 
 /* ---------- Main ---------- */
@@ -65,13 +68,13 @@ main {
     margin: 1rem;
     padding: 1rem;
     border: 2px solid var(--blue);
-    background-color: var(--light-blue);
+    background-color: var(--white);
 }
 
 .data h2,
 .weather h2 {
     text-align: center;
-    color: var(--green);
+    color: var(--text-color);
     margin-bottom: 1rem;
 }
 
@@ -94,11 +97,6 @@ main {
 }
 
 /* ---------- Mobile Weather Icon ---------- */
-
-/*
-   Mobile:
-   SVG appears below the "Weather" heading.
-*/
 
 .weather h2::after {
     content: "";
@@ -177,13 +175,13 @@ footer p {
         right: 1rem;
     }
 
-    /* Green title/header */
+    /* Red title/header */
     .data h2,
     .weather h2 {
     margin: 0.5rem 1rem 1rem -0.8rem;
     padding: 0.7rem;
     color: var(--white);
-    background-color: var(--green);
+    background-color: var(--red);
     text-align: left;
     }
 
