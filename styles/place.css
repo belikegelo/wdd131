@@ -9,6 +9,7 @@
     --blue: #0038A8;
     --red: #CE1126;
     --yellow: #FCD116;
+    --green: #138852;
     --white: #FFFFFF;
     --text-color: #222222;
     --light-blue: #EAF2FF;
@@ -70,9 +71,11 @@ main {
 .data h2,
 .weather h2 {
     text-align: center;
-    color: var(--blue);
+    color: var(--green);
     margin-bottom: 1rem;
 }
+
+/* ---------- Lists ---------- */
 
 .data-list,
 .weather-list {
@@ -83,9 +86,19 @@ main {
 .data-list p,
 .weather-list p {
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
+    align-items: center;
+    gap: .5rem;
     margin: 0.4rem 0;
+    font-size: 0.85rem;
 }
+
+/* ---------- Mobile Weather Icon ---------- */
+
+/*
+   Mobile:
+   SVG appears below the "Weather" heading.
+*/
 
 .weather h2::after {
     content: "";
@@ -93,6 +106,7 @@ main {
     width: 40px;
     height: 40px;
     margin: 0.5rem auto 0;
+
     background-image: url("../images/weather_icon.svg");
     background-size: contain;
     background-repeat: no-repeat;
@@ -118,7 +132,7 @@ footer p {
     font-size: 0.8rem;
 }
 
-/* ---------- Large View ---------- */
+/* ---------- Desktop View ---------- */
 
 @media (min-width: 700px) {
 
@@ -126,46 +140,78 @@ footer p {
         padding: 2.5rem;
     }
 
-    .hero {
+    /*
+       This becomes the positioning container
+       for Data and Weather.
+    */
+    main {
         position: relative;
     }
 
     .hero img {
         height: 500px;
-        object-fit: cover;
     }
+
+    /* ---------- Desktop Cards ---------- */
 
     .data,
     .weather {
         position: absolute;
         width: 200px;
+        margin: 0;
+        padding: 0 0 1rem;
+        border: none;
         background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     }
 
+    /* Data - upper left */
     .data {
-        top: 160px;
+        top: 30px;
         left: 1rem;
     }
 
+    /* Weather - lower right */
     .weather {
-        top: 320px;
+        bottom: 30px;
         right: 1rem;
     }
 
+    /* Green title/header */
+    .data h2,
+    .weather h2 {
+    margin: 0.5rem 1rem 1rem -0.8rem;
+    padding: 0.7rem;
+    color: var(--white);
+    background-color: var(--green);
+    text-align: left;
+    }
+
+
+
+
+    /* Content inside cards */
     .data-list,
     .weather-list {
-        max-width: 160px;
+        max-width: 170px;
+        margin: 0 auto;
     }
 
+    .data-list p,
+    .weather-list p {
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0.5rem 0;
+        font-size: 0.75rem;
+    }
+
+    /* Weather icon */
     .weather h2::after {
-    content: "☀️";
-    display: inline;
-    width: auto;
-    height: auto;
-    margin-left: 0.5rem;
-    background-image: none;
+        content: "☀️";
+        display: inline;
+        margin-left: 0.5rem;
+        background-image: none;
     }
-
-
-
 }
