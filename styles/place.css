@@ -1,0 +1,163 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0a192f;
+    --secondary-color: #172a45;
+    --accent-color: #2ecc71;
+    --text-color: #222222;
+    --white: #ffffff;
+    --transparency: rgba(255, 255, 255, 0.7);
+    --font-heading: "Press Start 2P", system-ui;
+    --font-body: 'Play',  sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    /* background-color: var(--primary-color); */
+}
+
+/* Header */
+header {
+    color: var(--white);
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--accent-color);
+    background-color: var(--secondary-color);
+}
+
+header h1 {
+    margin: 0 auto;
+    padding: 0.5rem;
+    max-width: 280px;
+    border: 1px solid var(--accent-color);
+}
+
+/* Main */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    width: 100%;
+}
+
+.hero picture {
+    display: block;
+    object-fit: cover;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.data,
+.weather {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--accent-color);
+}
+
+.data h2,
+.weather h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.data-list,
+.weather-list {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.data-list p,
+.weather-list p {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.4rem 0;
+}
+
+.weather-icon {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 1rem;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+footer p {
+    margin: 0.4rem;
+}
+
+.last-modified {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+}
+
+
+@media (min-width: 700px) {
+
+    header {
+        padding: 2.5rem;
+    }
+
+    header h1 {
+        max-width: 350px;
+    }
+
+    .hero {
+        position: relative;
+    }
+
+    .hero img {
+        height: 500px;
+        object-fit: cover;
+    }
+
+    .data,
+    .weather {
+        position: absolute;
+        background-color: var(--transparency);
+        width: 200px;
+    }
+
+    .data {
+        top: 160px;
+        left: 1rem;
+    }
+
+    .weather {
+        top: 320px;
+        right: 1rem;
+    }
+
+    .data-list,
+    .weather-list {
+        max-width: 160px;
+    }
+
+    .weather-list p,
+    .data-list p {
+        gap: 1rem;
+    }
+
+    footer {
+        margin-top: 0;
+    }
+}
