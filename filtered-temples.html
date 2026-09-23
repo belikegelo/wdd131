@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD131- Temple Album - Angelo Antimo</title>
+    <meta name="description" content="WDD131 Project: A responsive web album of LDS temples.">
+    <meta name="author" content="Angelo Antimo">
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <link rel="stylesheet" href="styles/filtered-temples-large.css">
+    <script src="scripts/filtered-temples.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h2>Temple Album</h2>
+        <button class="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Old</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Large</a></li>
+                <li><a href="#">Small</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Latter-day Saint Temples</h1>
+        
+        <figure>
+            <img src="images/temple_1.jpg" 
+                 alt="Salt Lake Temple at sunset with golden spires against an orange sky" 
+                 width="640" height="427" loading="lazy">
+            <figcaption>Salt Lake Temple - Utah, USA (1893)</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/temple_2.jpg" 
+                 alt="Rome Italy Temple with white marble facade and reflecting pool" 
+                 width="640" height="427" loading="lazy">
+            <figcaption>Rome Italy Temple - Rome, Italy (2019)</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/temple_3.jpg" 
+                 alt="Paris France Temple with modern glass art wall and landscaped grounds" 
+                 width="640" height="427" loading="lazy">
+            <figcaption>Paris France Temple - Le Chesnay, France (2017)</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/temple_4.jpg" 
+                 alt="Tokyo Japan Temple with traditional Japanese roof elements and cherry blossoms" 
+                 width="640" height="480" loading="lazy">
+            <figcaption>Tokyo Japan Temple - Tokyo, Japan (1980)</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/temple_5.jpg" 
+                 alt="London England Temple surrounded by green hedges and English gardens" 
+                 width="640" height="427" loading="lazy">
+            <figcaption>London England Temple - Lingfield, England (1958)</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/temple_6.jpg" 
+                 alt="Bern Switzerland Temple with alpine mountain backdrop and snow-capped peaks" 
+                 width="640" height="427" loading="lazy">
+            <figcaption>Bern Switzerland Temple - Zollikofen, Switzerland (1955)</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/temple_7.jpg" 
+                 alt="Manila Philippines Temple with tropical palm trees and white spire" 
+                 width="640" height="480" loading="lazy">
+            <figcaption>Manila Philippines Temple - Quezon City, Philippines (1984)</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/temple_8.jpg" 
+                 alt="São Paulo Brazil Temple with modern architecture and Brazilian flag nearby" 
+                 width="640" height="427" loading="lazy">
+            <figcaption>São Paulo Brazil Temple - São Paulo, Brazil (1978)</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="images/temple_9.jpg" 
+                 alt="Johannesburg South Africa Temple with African savanna landscape in background" 
+                 width="640" height="427" loading="lazy">
+            <figcaption>Johannesburg South Africa Temple - Johannesburg, South Africa (1985)</figcaption>
+        </figure>
+    </main>
+    
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🌱 Angelo Antimo 🌱 Cavite, Philippines</p>
+        <p class="last-modified">Last Modified: <span id="lastModified"></span></p>  
+    </footer>
+    
+</body>
+</html>
