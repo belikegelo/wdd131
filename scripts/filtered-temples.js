@@ -92,6 +92,174 @@ const temples = [
     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
   // Add more temple objects here...
+  {
+    templeName: "Manila Philippines",
+    location: "Quezon City, Philippines",
+    dedicated: "1984, September, 25",
+    area: 26683,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/_temp/029-Manila-Philippines-Temple.jpg"
+  },
+  {
+    templeName: "Cebu City Philippines",
+    location: "Cebu City, Philippines",
+    dedicated: "2010, June, 13",
+    area: 29556,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/_temp/133-Cebu-City-Philippines-Temple.jpg"
+  },
+  {
+    templeName: "Urdaneta Philippines",
+    location: "Urdaneta City, Pangasinan, Philippines",
+    dedicated: "2024, April, 28",
+    area: 32604,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/urdaneta-philippines-temple/urdaneta-philippines-temple-45874-main.jpg"
+  },
+  {
+    templeName: "Alabang Philippines",
+    location: "Muntinlupa City, Philippines",
+    dedicated: "2026, January, 18",
+    area: 35998,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/alabang-philippines-temple/alabang-philippines-temple-65306-main.jpg"
+  },
+  {
+    templeName: "Davao Philippines",
+    location: "Davao City, Philippines",
+    dedicated: "2026, May, 3",
+    area: 18450,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/davao-philippines-temple/davao-philippines-temple-69513-main.jpg"
+  },
+  {
+    templeName: "Bacolod Philippines",
+    location: "Bacolod City, Philippines",
+    dedicated: "2026, May, 31",
+    area: 18500,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/bacolod-philippines-temple/bacolod-philippines-temple-70237-main.jpg"
+  },
+  {
+    templeName: "Salt Lake Utah",
+    location: "Salt Lake City, Utah, United States",
+    dedicated: "1893, April, 6",
+    area: 253015,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/salt-lake-temple/salt-lake-temple-15669-main.jpg"
+  },
+  {
+    templeName: "St. George Utah",
+    location: "St. George, Utah, United States",
+    dedicated: "1877, April, 6",
+    area: 110000,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/st.-george-utah-temple/st.-george-utah-temple-40435-main.jpg"
+  },
+  {
+    templeName: "Laie Hawaii",
+    location: "Laie, Hawaii, United States",
+    dedicated: "1919, November, 27",
+    area: 42100,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/laie-hawaii-temple/laie-hawaii-temple-7370-main.jpg"
+  },
+  {
+    templeName: "Cardston Alberta",
+    location: "Cardston, Alberta, Canada",
+    dedicated: "1923, August, 26",
+    area: 88862,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/cardston-alberta-temple/cardston-alberta-temple-13287-main.jpg"
+  },
+  {
+    templeName: "Idaho Falls Idaho",
+    location: "Idaho Falls, Idaho, United States",
+    dedicated: "1945, September, 23",
+    area: 92000,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/idaho-falls-idaho-temple/idaho-falls-idaho-temple-73404-main.jpg"
+  },
+  {
+    templeName: "Bern Switzerland",
+    location: "Zollikofen, Switzerland",
+    dedicated: "1955, September, 11",
+    area: 35546,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/bern-switzerland-temple/bern-switzerland-temple-54641-main.jpg"
+  },
+  {
+    templeName: "London England",
+    location: "Newchapel, Surrey, England",
+    dedicated: "1958, September, 7",
+    area: 46000,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/london-england-temple/london-england-temple-56886-main.jpg"
+  },
+  {
+    templeName: "New Zealand",
+    location: "Hamilton, New Zealand",
+    dedicated: "1958, April, 20",
+    area: 48800,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/hamilton-new-zealand-temple/hamilton-new-zealand-temple-29744-main.jpg"
+  },
+  {
+    templeName: "Los Angeles California",
+    location: "Los Angeles, California, United States",
+    dedicated: "1956, March, 11",
+    area: 190614,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/los-angeles-california-temple/los-angeles-california-temple-38945-main.jpg"
+  },
+  {
+    templeName: "Oakland California",
+    location: "Oakland, California, United States",
+    dedicated: "1964, November, 17",
+    area: 95100,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/oakland-california-temple/oakland-california-temple-2654-main.jpg"
+  },
+  {
+    templeName: "Ogden Utah",
+    location: "Ogden, Utah, United States",
+    dedicated: "1972, September, 21",
+    area: 115000,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/ogden-utah-temple/ogden-utah-temple-38445-main.jpg"
+  },
+  {
+    templeName: "Provo Utah",
+    location: "Provo, Utah, United States",
+    dedicated: "1969, February, 9",
+    area: 128325,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/provo-utah-rock-canyon-temple/provo-utah-rock-canyon-temple-45659-main.jpg"
+  },
+  {
+    templeName: "São Paulo Brazil",
+    location: "São Paulo, Brazil",
+    dedicated: "1978, October, 30",
+    area: 59246,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/_temp/017-S%C3%A3o-Paulo-Brazil-Temple.jpg"
+  },
+  {
+    templeName: "Tokyo Japan",
+    location: "Tokyo, Japan",
+    dedicated: "1980, October, 27",
+    area: 52000,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/tokyo-japan-temple/tokyo-japan-temple-26340-main.jpg"
+  },
+  {
+    templeName: "Seoul Korea",
+    location: "Seoul, South Korea",
+    dedicated: "1985, December, 14",
+    area: 25960,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/seoul-korea-temple/seoul-korea-temple-22305-main.jpg"
+  },
 ];
 
 createTempleCard(temples);
