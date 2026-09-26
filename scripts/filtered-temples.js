@@ -264,30 +264,59 @@ const temples = [
 
 createTempleCard(temples);
 
+const homeLink = document.querySelector("#home");
+const oldLink = document.querySelector("#old");
+const newLink = document.querySelector("#new");
+const largeLink = document.querySelector("#large");
+const smallLink = document.querySelector("#small");
+
+homeLink.addEventListener("click", () => {
+    createTempleCard(temples);
+});
+
+oldLink.addEventListener("click", () => {
+    createTempleCard(temples.filter(temple => parseInt(temple.dedicated) < 1900));
+});
+
+newLink.addEventListener("click", () => {
+    createTempleCard(temples.filter(temple => parseInt(temple.dedicated) > 2000));
+});
+
+largeLink.addEventListener("click", () => {
+    createTempleCard(temples.filter(temple => temple.area > 90000));
+});
+
+smallLink.addEventListener("click", () => {
+    createTempleCard(temples.filter(temple => temple.area < 10000));
+});
+
+
+
 function createTempleCard(temples) {
-    temples.forEach(temple => {
-        let card = document.createElement("section");
-        let name = document.createElement("h3");
-        let location = document.createElement("p");
-        let dedication = document.createElement("p");
-        let area = document.createElement("p");
-        let img = document.createElement("img");
+  document.querySelector(".res-grid").innerHTML = "";
+  temples.forEach(temple => {
+      let card = document.createElement("section");
+      let name = document.createElement("h3");
+      let location = document.createElement("p");
+      let dedication = document.createElement("p");
+      let area = document.createElement("p");
+      let img = document.createElement("img");
 
-        name.textContent = temple.templeName;
-        location.innerHTML = `<span class="label">Location:</span> ${temple.location}`;
-        dedication.innerHTML = `<span class="label">Dedication:</span> ${temple.dedicated}`;
-        area.innerHTML = `<span class="label">Size:</span> ${temple.area} sq ft`;
+      name.textContent = temple.templeName;
+      location.innerHTML = `<span class="label">Location:</span> ${temple.location}`;
+      dedication.innerHTML = `<span class="label">Dedication:</span> ${temple.dedicated}`;
+      area.innerHTML = `<span class="label">Size:</span> ${temple.area} sq ft`;
 
-        img.setAttribute("src", temple.imageUrl);
-        img.setAttribute("alt", `${temple.templeName} Temple`);
-        img.setAttribute("loading", "lazy");
+      img.setAttribute("src", temple.imageUrl);
+      img.setAttribute("alt", `${temple.templeName} Temple`);
+      img.setAttribute("loading", "lazy");
 
-        card.appendChild(name);
-        card.appendChild(location);
-        card.appendChild(dedication);
-        card.appendChild(area);
-        card.appendChild(img);
+      card.appendChild(name);
+      card.appendChild(location);
+      card.appendChild(dedication);
+      card.appendChild(area);
+      card.appendChild(img);
 
-        document.querySelector(".res-grid").appendChild(card);
-    });
+      document.querySelector(".res-grid").appendChild(card);
+  });
 }
