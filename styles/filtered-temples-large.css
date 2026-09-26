@@ -35,17 +35,24 @@
     main {
         max-width: 1200px;
         padding: 0 2rem;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
     }
 
     main h1 {
-        grid-column: 1 / -1;
         font-size: 2.2rem;
     }
 
-    main figure {
+    /* .res-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    } */
+
+    .res-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .res-grid section {
         margin-bottom: 0;
     }
 
@@ -53,4 +60,14 @@
     footer {
         padding: 2rem;
     }
+}
+
+
+@media screen and (min-width: 900px) {
+
+    .res-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+
 }
