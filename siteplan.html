@@ -3,41 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131 Project Proposal</title>
+    <title>WDD131- Project - Angelo Antimo</title>
+    <meta name="description" content="WDD131 Project: Motorcycle Bucket List - The final website project that demonstrates mastery in HTML, CSS, and JavaScript">
+    <meta name="author" content="Angelo Antimo">
+    <link rel="stylesheet" href="styles/siteplan.css">
+    <script src="scripts/siteplan.js" defer></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
 </head>
-
 <body>
-
+    <header>
+        <div class="brand">
+            <h2>RideMoto</h2>
+            <p>Ride. Explore. Repeat.</p>
+        </div>
+        
+        <button class="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="plan.html">Plan</a></li>
+            </ul>
+        </nav>
+    </header>
+    
     <main>
-        <h1>WDD 131 Website Project Proposal</h1>
+         <!-- ==================== HERO ==================== -->
+        <section class="hero">
 
-        <h2>Website Project Subject</h2>
-        <p><strong>Motorcycle Bucket List: Exploring the Philippines by Motorcycle</strong></p>
+            <!--
+                EDIT THIS IMAGE:
+                Replace "images/adv-hero.webp" with your own ADV 160 image.
+            -->
+            <img
+                src="https://www.motodeal.com.ph/custom/blog-post/header/2022-honda-adv-160-6367b048def1f.jpeg"
+                alt="Honda ADV 160 ready for a motorcycle ride"
+                loading="lazy">
 
-        <h2>Brief Description of the Planned Site Content</h2>
-        <p>
-            This website will be an informational motorcycle travel bucket list
-            featuring several destinations in the Philippines that can be explored
-            by motorcycle. Each destination will include information such as the
-            location, estimated distance and travel time, suggested route, possible
-            stops, things to see and do, motorcycle preparation, items to bring,
-            and an estimated trip budget for fuel, tolls, food, and other expenses.
-            The website will also include an interactive bucket list where users
-            can save their favorite destinations, a motorcycle preparation
-            checklist, and a simple trip budget estimator.
-        </p>
+            <!-- Hero text -->
+            <div class="hero-text">
+                <h1>Find Your Next Ride</h1>
+                <p>Explore the Philippines by motorcycle</p>
+            </div>
 
-        <h2>Reason for Choosing This Subject</h2>
-        <p>
-            I chose this subject because I am interested in motorcycles and
-            exploring different places in the Philippines. I want to use the
-            project to combine my interest in motorcycle travel with what I am
-            learning about HTML, CSS, and JavaScript. The website will also be
-            useful as a simple planning and research tool for motorcycle trips
-            while allowing me to practice creating an interactive and responsive
-            website.
-        </p>
+        </section>
+
+
+        <section class="about">
+
+            <h2>About RideMoto</h2>
+
+            <p>
+                RideMoto is a motorcycle travel guide created for riders who want
+                to explore the Philippines on two wheels. Discover new destinations,
+                find routes worth riding, and get simple information to help you
+                prepare for your next adventure.
+            </p>
+
+            <p>
+                Whether you are looking for a quick weekend ride or planning a
+                longer journey, RideMoto makes it easier to find your next
+                destination and start your ride with confidence.
+            </p>
+
+        </section>
+
+
+        <section class="options">
+
+            <a class="option-card" href="destinations.html">
+                <h2>Explore Rides</h2>
+                <p>Discover motorcycle destinations and routes across the Philippines.</p>
+            </a>
+
+            <a class="option-card" href="plan.html">
+                <h2>Plan a Ride</h2>
+                <p>Prepare your trip and estimate the cost of your next ride.</p>
+            </a>
+
+        </section>
+
     </main>
-
+    
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🌱 Angelo Antimo 🌱 Cavite, Philippines</p>
+        <p class="last-modified">Last Modified: <span id="lastModified"></span></p>  
+    </footer>
+    
 </body>
 </html>
