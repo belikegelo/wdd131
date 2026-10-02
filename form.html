@@ -27,7 +27,7 @@
     <main>
         <form action="review.html" method="get">
 
-            <!-- Product Name -->
+          
             <label for="product">Product Name</label>
 
             <select id="product" name="product" required>
@@ -37,7 +37,7 @@
             </select>
 
 
-            <!-- Overall Rating -->
+         
             <fieldset>
                 <legend>Overall Rating</legend>
 
@@ -62,18 +62,13 @@
             </fieldset>
 
 
-            <!-- Date of Installation -->
+            
             <label for="installDate">Date of Installation</label>
 
-            <input
-                type="date"
-                id="installDate"
-                name="installDate"
-                required
-            >
+            <input type="date" id="installDate" name="installDate" required>
 
 
-            <!-- Useful Features -->
+          
             <fieldset>
                 <legend>Which features did you find useful?</legend>
 
@@ -82,13 +77,7 @@
                 <div class="checkbox-group">
 
                     <label>
-                        <input
-                            type="checkbox"
-                            id="durability"
-                            name="features"
-                            value="Durability"
-                        >
-                        Durability
+                        <input type="checkbox" id="durability" name="features" value="Durability">Durability
                     </label>
 
                     <label>
@@ -125,7 +114,7 @@
             </fieldset>
 
 
-            <!-- Written Review -->
+           
             <label for="review">
                 Written Review <span>(Optional)</span>
             </label>
@@ -133,24 +122,14 @@
             <textarea id="review" name="review"></textarea>
 
 
-            <!-- User Name -->
+         
             <label for="userName">
                 Your Name <span>(Optional)</span>
             </label>
 
-            <input
-                type="text"
-                id="userName"
-                name="userName"
-            >
+            <input type="text" id="userName" name="userName">
 
-
-            <!-- Submit -->
-            <input
-                class="submit-button"
-                type="submit"
-                value="Post Review"
-            >
+            <input class="submit-button" type="submit" value="Post Review">
 
         </form>
     </main>
