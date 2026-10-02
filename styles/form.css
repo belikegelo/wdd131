@@ -152,23 +152,19 @@ fieldset p {
 
 /* Checkboxes */
 
-.checkbox-group {
-    display: grid;
-    gap: 0.4rem;
-}
+.checkbox-group { 
+    display: grid; 
+    grid-template-columns: auto 1fr; gap: 0.4rem 0.5rem; 
+    align-items: center; 
+} 
+    
+.checkbox-group label { 
+    font-weight: 400; 
+} 
 
-.checkbox-group label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 400;
+.checkbox-group input { 
+    width: 18px; height: 18px; 
 }
-
-.checkbox-group input {
-    width: 18px;
-    height: 18px;
-}
-
 
 /* Submit Button */
 
