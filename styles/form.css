@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0f4c5c;
+    --secondary-color: #e8f1f2;
+    --accent-color: #2a9d8f;
+    --background-color: #f4f7f7;
+    --text-color: #222222;
+    --border-color: #b8c8ca;
+    --white: #ffffff;
+    --star-color: #f4b400;
+
+    --font-heading: "Nunito", sans-serif;
+    --font-body: "Roboto", sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.5;
+}
+
+
+/* Header */
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+}
+
+
+/* Main */
+
+main {
+    max-width: 650px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+}
+
+
+/* Form */
+
+form {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+form > label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+label span {
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+
+/* Select, date, text, textarea */
+
+select,
+input[type="date"],
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--white);
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+
+/* Fieldsets */
+
+fieldset {
+    border: none;
+    margin-top: 1.2rem;
+}
+
+legend {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+fieldset p {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+
+/* Star Rating */
+
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 0.4rem;
+}
+
+.stars input[type="radio"] {
+    display: none;
+}
+
+.stars > label {
+    color: var(--star-color);
+    width: clamp(25px, 9vw, 40px);
+    height: clamp(25px, 9vw, 40px);
+    font-size: clamp(1.4rem, 7vw, 2rem);
+    margin-left: clamp(2px, 1vw, 6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.stars > label::before {
+    content: "\2606";
+}
+
+.stars > label:hover::before {
+    content: "\2605";
+}
+
+.stars input:checked ~ label::before {
+    content: "\2605";
+}
+
+
+/* Checkboxes */
+
+.checkbox-group {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 400;
+}
+
+.checkbox-group input {
+    width: 18px;
+    height: 18px;
+}
+
+
+/* Submit Button */
+
+.submit-button {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: var(--primary-color);
+}
+
+/* review part */
+.confirmation {
+    background-color: var(--white);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.confirmation h2 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.confirmation p {
+    margin: 0.75rem 0;
+}
+/* Footer */
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0.3rem;
+    font-size: 0.85rem;
+}
+
+
+/* Larger Screens */
+
+@media screen and (min-width: 700px) {
+
+    main {
+        max-width: 700px;
+    }
+
+    form {
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}

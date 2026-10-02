@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Product Review</title>
+
+    <meta name="description"
+        content="WDD131 Product Review Form - Submit a review for a product.">
+    <meta name="author" content="Angelo Antimo">
+
+    <link rel="stylesheet" href="styles/form.css">
+    <script src="scripts/form.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <h1>Product Review</h1>
+    </header>
+
+    <main>
+        <form action="review.html" method="get">
+
+            <!-- Product Name -->
+            <label for="product">Product Name</label>
+
+            <select id="product" name="product" required>
+                <option value="" disabled selected>
+                    Select a Product ...
+                </option>
+            </select>
+
+
+            <!-- Overall Rating -->
+            <fieldset>
+                <legend>Overall Rating</legend>
+
+                <div class="stars">
+
+                    <input type="radio" id="fivestar" name="rating" value="5" required>
+                    <label for="fivestar"></label>
+
+                    <input type="radio" id="fourstar" name="rating" value="4" required>
+                    <label for="fourstar"></label>
+
+                    <input type="radio" id="threestar" name="rating" value="3" required>
+                    <label for="threestar"></label>
+
+                    <input type="radio" id="twostar" name="rating" value="2" required>
+                    <label for="twostar"></label>
+
+                    <input type="radio" id="onestar" name="rating" value="1" required>
+                    <label for="onestar"></label>
+
+                </div>
+            </fieldset>
+
+
+            <!-- Date of Installation -->
+            <label for="installDate">Date of Installation</label>
+
+            <input
+                type="date"
+                id="installDate"
+                name="installDate"
+                required
+            >
+
+
+            <!-- Useful Features -->
+            <fieldset>
+                <legend>Which features did you find useful?</legend>
+
+                <p>Check all that apply.</p>
+
+                <div class="checkbox-group">
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            id="durability"
+                            name="features"
+                            value="Durability"
+                        >
+                        Durability
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            id="ease"
+                            name="features"
+                            value="Ease of Use"
+                        >
+                        Ease of Use
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            id="performance"
+                            name="features"
+                            value="Performance"
+                        >
+                        Performance
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            id="design"
+                            name="features"
+                            value="Design"
+                        >
+                        Design
+                    </label>
+
+                </div>
+            </fieldset>
+
+
+            <!-- Written Review -->
+            <label for="review">
+                Written Review <span>(Optional)</span>
+            </label>
+
+            <textarea id="review" name="review"></textarea>
+
+
+            <!-- User Name -->
+            <label for="userName">
+                Your Name <span>(Optional)</span>
+            </label>
+
+            <input
+                type="text"
+                id="userName"
+                name="userName"
+            >
+
+
+            <!-- Submit -->
+            <input
+                class="submit-button"
+                type="submit"
+                value="Post Review"
+            >
+
+        </form>
+    </main>
+
+
+    <footer>
+        <p>
+            &copy; <span id="currentyear"></span>
+            🌱 Angelo Antimo 🌱 Cavite, Philippines
+        </p>
+
+        <p>
+            Last Modified:
+            <span id="lastModified"></span>
+        </p>
+    </footer>
+
+</body>
+</html>
