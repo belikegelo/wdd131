@@ -45,7 +45,7 @@ const temples = [
   },
   {
     templeName: "Manti Utah",
-    location: "Manti, Utah, United States",
+    location: "Manti, Utah, US",
     dedicated: "1888, May, 21",
     area: 74792,
     imageUrl:
@@ -53,7 +53,7 @@ const temples = [
   },
   {
     templeName: "Payson Utah",
-    location: "Payson, Utah, United States",
+    location: "Payson, Utah, US",
     dedicated: "2015, June, 7",
     area: 96630,
     imageUrl:
@@ -69,8 +69,8 @@ const temples = [
   },
   {
     templeName: "Washington D.C.",
-    location: "Kensington, Maryland, United States",
-    dedicated: "1974, November, 19",
+    location: "Kensington, US",
+    dedicated: "1974, Nov, 19",
     area: 156558,
     imageUrl:
     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/washington-dc/400x250/washington_dc_temple-exterior-2.jpeg"
@@ -94,8 +94,8 @@ const temples = [
   // Add more temple objects here...
   {
     templeName: "Manila Philippines",
-    location: "Quezon City, Philippines",
-    dedicated: "1984, September, 25",
+    location: "Quezon City, PH",
+    dedicated: "1984, Sep, 25",
     area: 26683,
     imageUrl:
       "https://churchofjesuschristtemples.org/assets/img/temples/_temp/029-Manila-Philippines-Temple.jpg"
@@ -110,7 +110,7 @@ const temples = [
   },
   {
     templeName: "Urdaneta Philippines",
-    location: "Urdaneta City, Pangasinan, Philippines",
+    location: "Urdaneta , Philippines",
     dedicated: "2024, April, 28",
     area: 32604,
     imageUrl:
@@ -118,7 +118,7 @@ const temples = [
   },
   {
     templeName: "Alabang Philippines",
-    location: "Muntinlupa City, Philippines",
+    location: "Alabang, Philippines",
     dedicated: "2026, January, 18",
     area: 35998,
     imageUrl:
@@ -126,7 +126,7 @@ const temples = [
   },
   {
     templeName: "Davao Philippines",
-    location: "Davao City, Philippines",
+    location: "Davao, Philippines",
     dedicated: "2026, May, 3",
     area: 18450,
     imageUrl:
@@ -134,7 +134,7 @@ const temples = [
   },
   {
     templeName: "Bacolod Philippines",
-    location: "Bacolod City, Philippines",
+    location: "Bacolod, Philippines",
     dedicated: "2026, May, 31",
     area: 18500,
     imageUrl:
@@ -142,7 +142,7 @@ const temples = [
   },
   {
     templeName: "Salt Lake Utah",
-    location: "Salt Lake City, Utah, United States",
+    location: "Salt Lake, Utah, US",
     dedicated: "1893, April, 6",
     area: 253015,
     imageUrl:
@@ -150,7 +150,7 @@ const temples = [
   },
   {
     templeName: "St. George Utah",
-    location: "St. George, Utah, United States",
+    location: "St. George, Utah, US",
     dedicated: "1877, April, 6",
     area: 110000,
     imageUrl:
@@ -158,15 +158,15 @@ const temples = [
   },
   {
     templeName: "Laie Hawaii",
-    location: "Laie, Hawaii, United States",
-    dedicated: "1919, November, 27",
+    location: "Laie, Hawaii, US",
+    dedicated: "1919, Nov, 27",
     area: 42100,
     imageUrl:
       "https://churchofjesuschristtemples.org/assets/img/temples/laie-hawaii-temple/laie-hawaii-temple-7370-main.jpg"
   },
   {
     templeName: "Cardston Alberta",
-    location: "Cardston, Alberta, Canada",
+    location: " Alberta, Canada",
     dedicated: "1923, August, 26",
     area: 88862,
     imageUrl:
@@ -174,31 +174,31 @@ const temples = [
   },
   {
     templeName: "Idaho Falls Idaho",
-    location: "Idaho Falls, Idaho, United States",
-    dedicated: "1945, September, 23",
+    location: "Idaho Falls, Idaho, US",
+    dedicated: "1945, Sep, 23",
     area: 92000,
     imageUrl:
       "https://churchofjesuschristtemples.org/assets/img/temples/idaho-falls-idaho-temple/idaho-falls-idaho-temple-73404-main.jpg"
   },
   {
     templeName: "Bern Switzerland",
-    location: "Zollikofen, Switzerland",
-    dedicated: "1955, September, 11",
+    location: "Switzerland",
+    dedicated: "1955, Sept, 11",
     area: 35546,
     imageUrl:
       "https://churchofjesuschristtemples.org/assets/img/temples/bern-switzerland-temple/bern-switzerland-temple-54641-main.jpg"
   },
   {
     templeName: "London England",
-    location: "Newchapel, Surrey, England",
-    dedicated: "1958, September, 7",
+    location: "Newchapel, England",
+    dedicated: "1958, Sep, 7",
     area: 46000,
     imageUrl:
       "https://churchofjesuschristtemples.org/assets/img/temples/london-england-temple/london-england-temple-56886-main.jpg"
   },
   {
     templeName: "New Zealand",
-    location: "Hamilton, New Zealand",
+    location: "New Zealand",
     dedicated: "1958, April, 20",
     area: 48800,
     imageUrl:
@@ -206,7 +206,7 @@ const temples = [
   },
   {
     templeName: "Los Angeles California",
-    location: "Los Angeles, California, United States",
+    location: "California, US",
     dedicated: "1956, March, 11",
     area: 190614,
     imageUrl:
@@ -214,23 +214,23 @@ const temples = [
   },
   {
     templeName: "Oakland California",
-    location: "Oakland, California, United States",
-    dedicated: "1964, November, 17",
+    location: "California, US",
+    dedicated: "1964, Nov, 17",
     area: 95100,
     imageUrl:
       "https://churchofjesuschristtemples.org/assets/img/temples/oakland-california-temple/oakland-california-temple-2654-main.jpg"
   },
   {
     templeName: "Ogden Utah",
-    location: "Ogden, Utah, United States",
-    dedicated: "1972, September, 21",
+    location: "Ogden, Utah, US",
+    dedicated: "1972, Sept, 21",
     area: 115000,
     imageUrl:
       "https://churchofjesuschristtemples.org/assets/img/temples/ogden-utah-temple/ogden-utah-temple-38445-main.jpg"
   },
   {
     templeName: "Provo Utah",
-    location: "Provo, Utah, United States",
+    location: "Provo, Utah, US",
     dedicated: "1969, February, 9",
     area: 128325,
     imageUrl:
@@ -255,7 +255,7 @@ const temples = [
   {
     templeName: "Seoul Korea",
     location: "Seoul, South Korea",
-    dedicated: "1985, December, 14",
+    dedicated: "1985, Dec, 14",
     area: 25960,
     imageUrl:
       "https://churchofjesuschristtemples.org/assets/img/temples/seoul-korea-temple/seoul-korea-temple-22305-main.jpg"
