@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideMoto -Project by Angelo Antimo</title>
+    <meta name="description" content="RideMoto: A responsive website for exploring motorcycle travel destinations in the Philippines.">
+    <meta name="author" content="Angelo Antimo">
+    <link rel="stylesheet" href="styles/siteplan.css">
+    <script src="scripts/siteplan.js" defer></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <h2>RideMoto</h2>
+            <p>Ride. Explore. Repeat.</p>
+        </div>
+        <button class="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="plan.html">Plan</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <img
+                src="https://www.motodeal.com.ph/custom/blog-post/header/2022-honda-adv-160-6367b048def1f.jpeg"
+                alt="Honda ADV 160 ready for a motorcycle ride"
+                loading="lazy">
+            <div class="hero-text">
+                <h1>Find Your Next Ride</h1>
+                <p>Explore the Philippines by motorcycle</p>
+            </div>
+        </section>
+        <section class="about">
+            <h2>About RideMoto</h2>
+            <p>
+                RideMoto is a motorcycle travel guide created for riders who want
+                to explore the Philippines on two wheels. Discover new destinations,
+                find routes worth riding, and get simple information to help you
+                prepare for your next adventure.
+            </p>
+            <p>
+                Whether you are looking for a quick weekend ride or planning a
+                longer journey, RideMoto makes it easier to find your next
+                destination and start your ride with confidence.
+            </p>
+        </section>
+        <section class="options">
+            <a class="option-card" href="destinations.html">
+                <h2>Explore Rides</h2>
+                <p>What motorcycle rides can I take from Manila for a weekend trip?</p>
+            </a>
+            <a class="option-card" href="plan.html">
+                <h2>Plan a Ride</h2>
+                <p>What should I prepare and bring before going on a long motorcycle ride?</p>
+            </a>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; <span id="currentyear"></span> 🌱 Angelo Antimo 🌱 Cavite, Philippines</p>
+        <p class="last-modified">Last Modified: <span id="lastModified"></span></p>  
+    </footer> 
+</body>
+</html>

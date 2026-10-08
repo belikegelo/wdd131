@@ -3,77 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RideMoto -Project by Angelo Antimo</title>
-    <meta name="description" content="RideMoto: A responsive website for exploring motorcycle travel destinations in the Philippines.">
+    <title>RideMoto - Website Planning Document</title>
+    <meta name="description" content="Website planning document for RideMoto, a motorcycle travel guide for exploring the Philippines.">
     <meta name="author" content="Angelo Antimo">
     <link rel="stylesheet" href="styles/siteplan.css">
     <script src="scripts/siteplan.js" defer></script>
-    <!-- Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-
 </head>
+
 <body>
+
     <header>
         <div class="brand">
-            <h2>RideMoto</h2>
+            <h1>RideMoto</h1>
             <p>Ride. Explore. Repeat.</p>
         </div>
-        <button class="hamburger" aria-label="Toggle navigation menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="destinations.html">Destinations</a></li>
-                <li><a href="plan.html">Plan</a></li>
-            </ul>
-        </nav>
+
+        <p class="document-title">WDD 131 - Website Planning Document</p>
     </header>
-    
+
     <main>
-        <section class="hero">
-            <img
-                src="https://www.motodeal.com.ph/custom/blog-post/header/2022-honda-adv-160-6367b048def1f.jpeg"
-                alt="Honda ADV 160 ready for a motorcycle ride"
-                loading="lazy">
-            <div class="hero-text">
-                <h1>Find Your Next Ride</h1>
-                <p>Explore the Philippines by motorcycle</p>
+
+
+        <section class="planning-section">
+            <h2>1. Site Name</h2>
+
+            <div class="logo-example">
+                <span class="logo-text">RideMoto</span>
+                <span class="logo-tagline">Ride. Explore. Repeat.</span>
+            </div>
+
+            <p>
+                The name <strong>RideMoto</strong> combines "Ride" and "Moto,"
+                making it simple and easy to remember. The name represents a
+                website focused on motorcycle travel and exploring destinations
+                around the Philippines.
+            </p>
+
+            <p>
+                The tagline <strong>"Ride. Explore. Repeat."</strong> represents
+                the main idea of the website: encouraging riders to discover
+                new places, enjoy the journey, and continue exploring.
+            </p>
+
+            <p>
+                Proposed domain name: <strong>ridemoto.ph</strong>
+            </p>
+        </section>
+
+
+        <section class="planning-section">
+            <h2>2. Site Purpose</h2>
+
+            <p>
+                RideMoto is a motorcycle travel guide designed for riders who
+                want to explore the Philippines by motorcycle. The website
+                provides information about motorcycle destinations, suggested
+                routes, estimated travel time, things to see and do, preparation
+                tips, and estimated trip expenses.
+            </p>
+
+            <p>
+                The website will help riders discover possible destinations and
+                prepare for a motorcycle trip without needing to search through
+                many different sources. The project will focus on simple,
+                beginner-friendly information that is useful for planning
+                weekend rides and longer motorcycle trips.
+            </p>
+        </section>
+
+        <section class="planning-section">
+            <h2>3. Scenarios</h2>
+
+            <p>
+                The following questions represent what a motorcycle rider may
+                ask when visiting RideMoto:
+            </p>
+
+            <ul class="scenario-list">
+                <li>
+                    What motorcycle destinations can I visit from Cavite or
+                    nearby areas for a weekend trip?
+                </li>
+
+                <li>
+                    What should I prepare and bring before going on a long
+                    motorcycle ride?
+                </li>
+
+                <li>
+                    How much should I budget for fuel, tolls, food, and other
+                    expenses on a motorcycle trip?
+                </li>
+
+                <li>
+                    What are some interesting places and activities at a
+                    motorcycle destination?
+                </li>
+            </ul>
+        </section>
+
+
+       
+        <section class="planning-section">
+            <h2>4. Color Schema</h2>
+
+            <p>
+                RideMoto will use a warm and simple color palette that gives
+                the website a clean outdoor and travel-inspired appearance.
+                The colors will also provide enough contrast for readability.
+            </p>
+
+            <div class="color-grid">
+
+                <div class="color-card">
+                    <div class="color-sample primary-color"></div>
+                    <h3>Primary</h3>
+                    <p>#5A4636</p>
+                    <p>
+                        Used for main headings, important links, buttons,
+                        and selected accents.
+                    </p>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-sample secondary-color"></div>
+                    <h3>Secondary</h3>
+                    <p>#8A8580</p>
+                    <p>
+                        Used for supporting text, subtitles, and less important
+                        information.
+                    </p>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-sample dark-color"></div>
+                    <h3>Dark</h3>
+                    <p>#1C1C1C</p>
+                    <p>
+                        Used for the header, footer, navigation areas, and
+                        strong text.
+                    </p>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-sample background-color"></div>
+                    <h3>Background</h3>
+                    <p>#F5F2ED</p>
+                    <p>
+                        Used as the main page background.
+                    </p>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-sample surface-color"></div>
+                    <h3>Surface</h3>
+                    <p>#FFFFFF</p>
+                    <p>
+                        Used for cards, content areas, and text displayed on
+                        dark backgrounds.
+                    </p>
+                </div>
+
+                <div class="color-card">
+                    <div class="color-sample border-color"></div>
+                    <h3>Border</h3>
+                    <p>#D8D2CB</p>
+                    <p>
+                        Used for borders and subtle visual separation.
+                    </p>
+                </div>
+
             </div>
         </section>
-        <section class="about">
-            <h2>About RideMoto</h2>
-            <p>
-                RideMoto is a motorcycle travel guide created for riders who want
-                to explore the Philippines on two wheels. Discover new destinations,
-                find routes worth riding, and get simple information to help you
-                prepare for your next adventure.
-            </p>
-            <p>
-                Whether you are looking for a quick weekend ride or planning a
-                longer journey, RideMoto makes it easier to find your next
-                destination and start your ride with confidence.
-            </p>
-        </section>
-        <section class="options">
-            <a class="option-card" href="destinations.html">
-                <h2>Explore Rides</h2>
-                <p>What motorcycle rides can I take from Manila for a weekend trip?</p>
-            </a>
-            <a class="option-card" href="plan.html">
-                <h2>Plan a Ride</h2>
-                <p>What should I prepare and bring before going on a long motorcycle ride?</p>
-            </a>
-        </section>
-    </main>
+
+
     
+        <section class="planning-section">
+            <h2>5. Typography</h2>
+
+            <div class="font-example heading-font">
+                <h3>Montserrat</h3>
+                <p>
+                    Used for the RideMoto logo, main headings, section headings,
+                    and other important titles.
+                </p>
+                <p class="font-preview">
+                    Ride. Explore. Repeat.
+                </p>
+            </div>
+
+            <div class="font-example body-font">
+                <h3>Inter</h3>
+                <p>
+                    Used for paragraphs, navigation links, descriptions,
+                    scenarios, and general website content.
+                </p>
+                <p class="font-preview">
+                    Explore the Philippines by motorcycle.
+                </p>
+            </div>
+        </section>
+
+        <section class="planning-section">
+            <h2>6. Wireframes</h2>
+
+            <p>
+                This wireframe shows the planned layout of the RideMoto home page
+                for different screen sizes.
+            </p>
+
+            <div class="wireframe">
+                <img
+                    src="images/image.webp"
+                    alt="RideMoto home page wireframe showing the planned website layout"
+                    loading="lazy">
+            </div>
+        </section>
+
+    </main>
+
+
     <footer>
         <p>&copy; <span id="currentyear"></span> 🌱 Angelo Antimo 🌱 Cavite, Philippines</p>
         <p class="last-modified">Last Modified: <span id="lastModified"></span></p>  
     </footer> 
+
 </body>
 </html>
