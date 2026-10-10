@@ -143,22 +143,22 @@ const destinations = [
             roadNote: "Prepare for winding roads and changing weather.",
             imageUrl: "https://newsinfo.inquirer.net/files/2026/03/Mirador-Hill-baguio-21march2026-scaled.jpg"
         }
-    ];
+];
 
 
-// GET HTML ELEMENTS
 const destinationSelect = document.getElementById("destination-select");
 const destinationResult = document.getElementById("destination-result");
 const destinationName = document.getElementById("destination-name");
 const destinationImage = document.getElementById("destination-image");
+const budgetMin = document.getElementById("budgetMin");
+const budgetMax = document.getElementById("budgetMax");
 const mapsLink = document.getElementById("maps-link");
 const checkboxes = document.querySelectorAll(".save-checkbox");
 
-// KEY USED TO SAVE THE PLAN
+// Key used to save the plan
 const storageKey = "ridemotoPlan";
 
-
-// LOAD SAVED DATA
+// Load saved data
 let savedPlan = {};
 
 try {
@@ -167,21 +167,20 @@ try {
     savedPlan = {};
 }
 
+// Add destinations to the dropdown
+if (destinationSelect) {
+    destinations.forEach(function (destination) {
+        const option = new Option(destination.name, destination.name);
+        destinationSelect.add(option);
+    });
 
-// ADD DESTINATIONS TO THE DROPDOWN
-destinations.forEach(function (destination) {
-    const option = new Option(destination.name, destination.name);
-    destinationSelect.add(option);
-});
-
-
-// RESTORE THE SELECTED DESTINATION
-if (savedPlan.destination) {
-    destinationSelect.value = savedPlan.destination;
+    // Restore the selected destination
+    if (savedPlan.destination) {
+        destinationSelect.value = savedPlan.destination;
+    }
 }
 
-
-// RESTORE CHECKBOXES
+// Restore checkboxes
 checkboxes.forEach(function (checkbox) {
     if (
         savedPlan.checkboxes &&
@@ -191,8 +190,7 @@ checkboxes.forEach(function (checkbox) {
     }
 });
 
-
-// SAVE DESTINATION AND CHECKBOXES
+// Save destination and checkboxes
 function savePlan() {
     const planData = {
         destination: destinationSelect.value,
@@ -206,8 +204,7 @@ function savePlan() {
     localStorage.setItem(storageKey, JSON.stringify(planData));
 }
 
-
-// SHOW THE SELECTED DESTINATION
+// Show the selected destination
 function showDestination() {
     const selectedDestination = destinations.find(function (destination) {
         return destination.name === destinationSelect.value;
@@ -223,6 +220,13 @@ function showDestination() {
     destinationImage.src = selectedDestination.imageUrl;
     destinationImage.alt = selectedDestination.name;
 
+    // Display the selected destination's budget
+    budgetMin.textContent =
+        selectedDestination.budgetMin.toLocaleString("en-PH");
+
+    budgetMax.textContent =
+        selectedDestination.budgetMax.toLocaleString("en-PH");
+
     const address =
         selectedDestination.name + ", " +
         selectedDestination.province + ", Philippines";
@@ -235,19 +239,20 @@ function showDestination() {
     destinationResult.classList.add("show");
 }
 
+// When the destination changes
+if (destinationSelect) {
+    destinationSelect.addEventListener("change", function () {
+        showDestination();
+        savePlan();
+    });
+}
 
-// WHEN THE DESTINATION CHANGES
-destinationSelect.addEventListener("change", function () {
-    showDestination();
-    savePlan();
-});
-
-
-// SAVE EACH CHECKBOX WHEN IT CHANGES
+// Save each checkbox when it changes
 checkboxes.forEach(function (checkbox) {
     checkbox.addEventListener("change", savePlan);
 });
 
-
-// DISPLAY SAVED DESTINATION AFTER REFRESH
-showDestination();
+// Display saved destination after refresh
+if (destinationSelect) {
+    showDestination();
+}
