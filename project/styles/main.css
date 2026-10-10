@@ -1,10 +1,11 @@
-/* Reset */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/* CSS Variables */
+
+
 :root {
     --primary: #5A4636;
     --secondary: #8A8580;
@@ -18,8 +19,6 @@
 }
 
 
-/* Body */
-
 body {
     font-family: var(--font-body);
     color: var(--dark);
@@ -27,54 +26,55 @@ body {
     line-height: 1.6;
 }
 
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+}
 
-/* Header */
-
-header {
-    position: relative;
-
-    background-color: var(--dark);
-    color: var(--surface);
-
-    padding: 1rem;
+a {
+    color: inherit;
 }
 
 
-/* For LOGO */
+
+header {
+    position: relative;
+    padding: 1rem;
+    background-color: var(--dark);
+    color: var(--surface);
+}
+
+/* Logo */
 
 .brand h2 {
-    font-family: var(--font-heading);
+    color: var(--surface);
     font-size: 1.5rem;
     font-weight: 700;
-
     letter-spacing: 0.05rem;
-
-    color: var(--surface);
 }
 
 .brand p {
     margin-top: 0.15rem;
-
     color: var(--secondary);
-
     font-size: 0.8rem;
 }
 
-/* main mobile view NAVIGATION */
+
+
+
+/* Mobile Navigation */
 
 nav ul {
     display: none;
-
     flex-direction: column;
     gap: 0.25rem;
-
-    list-style: none;
 
     margin-top: 1rem;
     padding: 0.75rem;
 
+    list-style: none;
     background-color: var(--dark);
-
     border-radius: 6px;
 }
 
@@ -84,57 +84,50 @@ nav ul.active {
 
 nav a {
     display: block;
-
     padding: 0.7rem 1rem;
 
     color: var(--surface);
-
     text-decoration: none;
-
     border-radius: 4px;
 
-    transition:
-        background-color 0.2s ease,
-        color 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
 nav a:hover,
-nav a:focus {
+nav a:focus-visible {
     background-color: var(--primary);
-    color: var(--surface);
 }
 
 
-/* Hamburger button */
+/* Hamburger Button */
+
 .hamburger {
     position: absolute;
     top: 1rem;
     right: 1rem;
 
     display: block;
-
     padding: 0.5rem;
 
     background: none;
     border: none;
-
     cursor: pointer;
 }
 
 .hamburger span {
     display: block;
-
     width: 25px;
     height: 3px;
 
     margin: 5px 0;
 
     background-color: var(--surface);
-
     border-radius: 2px;
 
     transition: all 0.3s ease;
 }
+
+/* Hamburger Animation */
 
 .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
@@ -149,41 +142,160 @@ nav a:focus {
 }
 
 
-/* main */
 
 main {
-    width: min(90%, 1000px);
-
-    margin: 2rem auto;
-
-    padding: 0 1rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
 }
 
 
-/* Main page heading */
 
-main h1 {
-    margin-bottom: 2rem;
+.hero {
+    position: relative;
+    min-height: 300px;
+    overflow: hidden;
 
+    background-color: var(--dark);
+    border-radius: 8px;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Dark Overlay */
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to right,
+        rgba(28, 28, 28, 0.8),
+        rgba(28, 28, 28, 0.2)
+    );
+}
+
+/* Hero Text */
+
+.hero-text {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 1.5rem;
+    right: 1.5rem;
+
+    transform: translateY(-50%);
+    color: var(--surface);
+}
+
+.hero-text h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 1rem;
+}
+
+
+
+.about {
+    padding: 2rem 0;
+}
+
+.about h2 {
+    margin-bottom: 0.75rem;
     color: var(--primary);
-
-    font-family: var(--font-heading);
-
-    font-size: 1.7rem;
-
-    text-align: center;
+    font-size: 1.5rem;
 }
 
-/* footer */
+.about p {
+    margin-bottom: 1rem;
+}
+
+.about p:last-child {
+    margin-bottom: 0;
+}
+
+
+
+.options {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* Individual Cards */
+
+.option-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 1.5rem;
+
+    color: var(--dark);
+    background-color: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.option-card h2 {
+    margin-bottom: 0.75rem;
+    color: var(--primary);
+    font-size: 1.3rem;
+}
+
+.option-card p {
+    margin-bottom: 1rem;
+}
+
+/* Card Link Text */
+
+.card-link {
+    margin-top: auto;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Card Hover and Keyboard Focus */
+
+.option-card:hover,
+.option-card:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(28, 28, 28, 0.12);
+}
+
+.option-card:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+
+
 
 footer {
     margin-top: 3rem;
-
     padding: 1.5rem 1rem;
 
-    background-color: var(--dark);
-
     color: var(--surface);
+    background-color: var(--dark);
 
     text-align: center;
 }
@@ -194,48 +306,43 @@ footer p {
 
 .last-modified {
     color: var(--secondary);
-
     font-size: 0.8rem;
 }
 
 
-/* Tablet or Rotate*/
+
 
 @media screen and (min-width: 700px) {
 
+    /* Header */
+
     header {
         display: flex;
-
         align-items: center;
         justify-content: space-between;
-
         padding: 1rem 2rem;
     }
 
     .brand {
         display: flex;
-
         align-items: baseline;
-
         gap: 1rem;
     }
 
-
     .brand p {
         padding-left: 1rem;
-
         border-left: 1px solid var(--secondary);
     }
 
+
+    /* Navigation */
+
     nav ul {
         display: flex;
-
         flex-direction: row;
-
         gap: 0.25rem;
 
         margin-top: 0;
-
         padding: 0;
 
         background-color: transparent;
@@ -245,22 +352,81 @@ footer p {
         display: none;
     }
 
-    main h1 {
-        font-size: 2rem;
+
+    /* Main */
+
+    main {
+        padding: 2rem;
+    }
+
+
+    /* Hero */
+
+    .hero img {
+        height: 400px;
+    }
+
+    .hero-text {
+        left: 3rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+
+    /* Option Cards */
+
+    .options {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 
-/* Destop Larger View */
+
+
 @media screen and (min-width: 1000px) {
 
-    main {
-        width: min(90%, 1200px);
+    /* Hero */
+
+    .hero img {
+        height: 450px;
     }
 
-    main h1 {
-        font-size: 2.2rem;
+    .hero-text {
+        left: 4rem;
     }
+
+    .hero-text h1 {
+        font-size: 3.2rem;
+    }
+
+
+    /* About */
+
+    .about {
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 3rem 0;
+    }
+
+
+    /* Option Cards */
+
+    .options {
+        gap: 1.5rem;
+    }
+
+    .option-card {
+        padding: 2rem;
+    }
+
+
+    /* Footer */
 
     footer {
         padding: 2rem;
