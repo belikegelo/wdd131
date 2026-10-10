@@ -33,7 +33,163 @@
             </ul>
         </nav>
     </header>
-    <main>  </main>
+    
+    <main>
+        <div class="plan-layout">
+
+            <!-- LEFT SIDE -->
+            <section class="plan-left">
+                <h1>Plan Your Ride</h1>
+
+                <label for="destination-select">Choose a destination:</label>
+                <select id="destination-select">
+                    <option value="">-- Select a destination --</option>
+                </select>
+
+                <div id="destination-result" class="destination-result">
+
+                    <p>
+                        <strong>Place:</strong>
+                        <span id="destination-name"></span>
+                    </p>
+
+                    <img id="destination-image" src="" alt="" loading="lazy">
+
+                    <p>
+                        <strong>Google Maps:</strong>
+                        <a id="maps-link" href="" target="_blank"
+                            rel="noopener noreferrer">
+                            Get Directions
+                        </a>
+                    </p>
+
+                </div>
+
+                <!-- FIXED BUDGET CHECKLIST -->
+                <section class="budget-section">
+                    <h2>Budget Checklist</h2>
+
+                    <label>
+                        <input type="checkbox" id="budget-fuel" class="save-checkbox">
+                        Gas / Fuel
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="budget-food" class="save-checkbox">
+                        Food and Water
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="budget-toll" class="save-checkbox">
+                        Toll and Parking
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="budget-fees" class="save-checkbox">
+                        Entrance Fees
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="budget-emergency" class="save-checkbox">
+                        Emergency Fund
+                    </label>
+                </section>
+            </section>
+
+
+            <!-- RIGHT SIDE -->
+            <section class="plan-right">
+                <h2>BLOWBAGETS</h2>
+                <p>Check your motorcycle before riding.</p>
+
+                <ul class="safety-list">
+
+                    <li>
+                        <label>
+                            <input type="checkbox" id="safety-brakes" class="save-checkbox">
+                            <span class="safety-letter">B</span>
+                            <span><strong>Brakes</strong><br>Check front and rear brakes.</span>
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input type="checkbox" id="safety-lights" class="save-checkbox">
+                            <span class="safety-letter">L</span>
+                            <span><strong>Lights</strong><br>Check headlights, brake lights, and signals.</span>
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input type="checkbox" id="safety-oil" class="save-checkbox">
+                            <span class="safety-letter">O</span>
+                            <span><strong>Oil</strong><br>Check engine oil level and leaks.</span>
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input type="checkbox" id="safety-water" class="save-checkbox">
+                            <span class="safety-letter">W</span>
+                            <span><strong>Water</strong><br>Check coolant if your motorcycle uses it.</span>
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input type="checkbox" id="safety-battery" class="save-checkbox">
+                            <span class="safety-letter">B</span>
+                            <span><strong>Battery</strong><br>Check the battery and horn.</span>
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input type="checkbox" id="safety-air" class="save-checkbox">
+                            <span class="safety-letter">A</span>
+                            <span><strong>Air</strong><br>Check tire pressure.</span>
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input type="checkbox" id="safety-gas" class="save-checkbox">
+                            <span class="safety-letter">G</span>
+                            <span><strong>Gas</strong><br>Make sure you have enough fuel.</span>
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input type="checkbox" id="safety-engine" class="save-checkbox">
+                            <span class="safety-letter">E</span>
+                            <span><strong>Engine</strong><br>Check for unusual sounds or problems.</span>
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input type="checkbox" id="safety-tires" class="save-checkbox">
+                            <span class="safety-letter">T</span>
+                            <span><strong>Tires</strong><br>Check tread and damage.</span>
+                        </label>
+                    </li>
+
+                    <li>
+                        <label>
+                            <input type="checkbox" id="safety-self" class="save-checkbox">
+                            <span class="safety-letter">S</span>
+                            <span><strong>Self</strong><br>Wear a helmet and bring your license.</span>
+                        </label>
+                    </li>
+
+                </ul>
+            </section>
+
+        </div>
+    </main>
+
 
     <footer>
         <p>&copy; <span id="currentyear"></span> 🌱 Angelo Antimo 🌱 Cavite, Philippines</p>
