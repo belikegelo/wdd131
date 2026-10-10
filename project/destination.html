@@ -1,19 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destinations - RideMoto</title>
-    <meta name="description" content="RideMoto: Explore motorcycle travel destinations in the Philippines.">
+    <meta name="description" content="Explore motorcycle travel destinations and plan your next ride in the Philippines.">
     <meta name="author" content="Angelo Antimo">
+
     <link rel="stylesheet" href="styles/destination.css">
     <script src="scripts/destination.js" defer></script>
-    <link rel="stylesheet" href="styles/main.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <header>
@@ -21,94 +21,65 @@
             <h2>RideMoto</h2>
             <p>Ride. Explore. Repeat.</p>
         </div>
+
         <button class="hamburger" aria-label="Toggle navigation menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
+
         <nav>
             <ul>
                 <li><a href="main.html">Home</a></li>
-                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="destination.html" aria-current="page">Destinations</a></li>
                 <li><a href="plan.html">Plan</a></li>
             </ul>
         </nav>
     </header>
-    <main class="destinations-main">
 
+    <main class="destinations-main">
         <section class="destinations-intro">
             <p class="eyebrow">YOUR NEXT ADVENTURE STARTS HERE</p>
-
             <h1>Destinations</h1>
+            <p class="intro-description">
+                Discover your next motorcycle adventure around the Philippines.
+            </p>
         </section>
 
-        <section class="destination-browser" aria-labelledby="filter-heading">
-
-
-
+        <section class="destination-browser" aria-label="Browse and filter destinations">
             <div class="destination-filters" role="group" aria-label="Filter destinations">
-
-                <button
-                    type="button"
-                    class="filter-button is-active"
-                    data-filter="all"
-                    aria-pressed="true">
+                <button type="button" class="filter-button is-active" data-filter="all" aria-pressed="true">
                     All Destinations
                 </button>
 
-                <button
-                    type="button"
-                    class="filter-button"
-                    data-filter="budget"
-                    aria-pressed="false">
+                <button type="button" class="filter-button" data-filter="budget" aria-pressed="false">
                     Budget Friendly
                 </button>
 
-                <button
-                    type="button"
-                    class="filter-button"
-                    data-filter="nearest"
-                    aria-pressed="false">
+                <button type="button" class="filter-button" data-filter="nearest" aria-pressed="false">
                     Nearest
                 </button>
 
-                <button
-                    type="button"
-                    class="filter-button"
-                    data-filter="farthest"
-                    aria-pressed="false">
+                <button type="button" class="filter-button" data-filter="farthest" aria-pressed="false">
                     Farthest
                 </button>
 
-                <button
-                    type="button"
-                    class="filter-button"
-                    data-filter="shortest"
-                    aria-pressed="false">
+                <button type="button" class="filter-button" data-filter="shortest" aria-pressed="false">
                     Shortest Ride
                 </button>
 
-                <button
-                    type="button"
-                    class="filter-button"
-                    data-filter="longest"
-                    aria-pressed="false">
+                <button type="button" class="filter-button" data-filter="longest" aria-pressed="false">
                     Longest Ride
                 </button>
-
             </div>
 
-            <!-- JavaScript will generate destination cards here. -->
-            <div class="destination-grid" id="destination-grid">
-            </div>
-
+            <div class="destination-grid" id="destination-grid"></div>
         </section>
-
     </main>
-    
+
     <footer>
-        <p>&copy; <span id="currentyear"></span> 🌱 Angelo Antimo 🌱 Cavite, Philippines</p>
-        <p class="last-modified">Last Modified: <span id="lastModified"></span></p>  
-    </footer> 
+        <p>&copy; <span id="currentyear"></span>🌱 Angelo Antimo 🌱 Cavite, Philippines</p>
+        <p class="last-modified">Last Modified: <span id="lastModified"></span></p>
+    </footer>
 </body>
 </html>
