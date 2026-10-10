@@ -1,10 +1,5 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-
+/* universal */
 :root {
     --primary: #5A4636;
     --secondary: #8A8580;
@@ -17,6 +12,11 @@
     --font-body: "Inter", sans-serif;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: var(--font-body);
@@ -35,16 +35,20 @@ a {
     color: inherit;
 }
 
-
-
-header {
-    position: relative;
-    padding: 1rem;
-    background-color: var(--dark);
-    color: var(--surface);
+button {
+    font: inherit;
 }
 
-/* Logo */
+/* header */
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    color: var(--surface);
+    background-color: var(--dark);
+}
 
 .brand h2 {
     color: var(--surface);
@@ -54,27 +58,26 @@ header {
 }
 
 .brand p {
-    margin-top: 0.15rem;
+    margin-top: 0.1rem;
     color: var(--secondary);
     font-size: 0.8rem;
 }
 
-
-
-
-/* Mobile Navigation */
+nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+}
 
 nav ul {
     display: none;
     flex-direction: column;
     gap: 0.25rem;
-
-    margin-top: 1rem;
-    padding: 0.75rem;
-
+    padding: 0.5rem 1rem 1rem;
     list-style: none;
     background-color: var(--dark);
-    border-radius: 6px;
 }
 
 nav ul.active {
@@ -83,31 +86,21 @@ nav ul.active {
 
 nav a {
     display: block;
-    padding: 0.7rem 1rem;
-
+    padding: 0.65rem 1rem;
     color: var(--surface);
     text-decoration: none;
     border-radius: 4px;
-
     transition: background-color 0.2s ease;
 }
 
 nav a:hover,
-nav a:focus-visible {
+nav a:focus-visible,
+nav a[aria-current="page"] {
     background-color: var(--primary);
 }
 
-
-/* Hamburger Button */
-
 .hamburger {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-
-    display: block;
     padding: 0.5rem;
-
     background: none;
     border: none;
     cursor: pointer;
@@ -117,19 +110,14 @@ nav a:focus-visible {
     display: block;
     width: 25px;
     height: 3px;
-
     margin: 5px 0;
-
     background-color: var(--surface);
     border-radius: 2px;
-
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Hamburger Animation */
-
 .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: translateY(8px) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -137,53 +125,72 @@ nav a:focus-visible {
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+    transform: translateY(-8px) rotate(-45deg);
 }
 
-
-/* Main */
-
-
+/* main */
 main {
-    padding: 1rem;
+    width: min(1200px, calc(100% - 2rem));
+    margin: 2rem auto 3rem;
 }
 
 .plan-layout {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 1.25rem;
 }
 
 .plan-left,
 .plan-right {
     min-width: 0;
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: var(--surface);
 }
 
-.plan-left h1,
-.plan-right h2 {
-    margin-bottom: 1rem;
+.plan-left h1 {
+    margin-bottom: 1.25rem;
+    color: var(--primary);
+    font-size: clamp(1.75rem, 4vw, 2.4rem);
+    line-height: 1.2;
+}
+
+.plan-left > label {
+    display: block;
+    font-weight: 600;
 }
 
 #destination-select {
     display: block;
     width: 100%;
     margin-top: 0.5rem;
-    padding: 0.6rem;
-    font: inherit;
+    padding: 0.7rem;
     border: 1px solid var(--border);
-    background-color: var(--surface);
+    border-radius: 4px;
     color: var(--dark);
+    background-color: var(--surface);
+    font: inherit;
+}
+
+#destination-select:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
 
 .destination-result {
     display: none;
-    margin-top: 1rem;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
 }
 
 .destination-result.show {
     display: block;
+}
+
+.destination-result p {
+    margin-bottom: 0.75rem;
 }
 
 #destination-image {
@@ -192,91 +199,96 @@ main {
     max-width: 500px;
     max-height: 280px;
     margin: 0.75rem 0;
+    border-radius: 4px;
     object-fit: cover;
 }
 
 #maps-link {
     color: var(--primary);
+    font-weight: 600;
 }
 
-
-/* BUDGET CHECKLIST */
+#maps-link:hover {
+    text-decoration-thickness: 2px;
+}
 
 .budget-section {
     margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
 }
 
 .budget-section h2 {
     margin-bottom: 0.75rem;
+    color: var(--primary);
+    font-size: 1.25rem;
 }
 
 .budget-section label {
-    display: block;
-    margin: 0.6rem 0;
-}
-
-input[type="checkbox"] {
-    margin-right: 0.5rem;
-    accent-color: var(--primary);
-}
-
-
-/* BLOWBAGETS CHECKLIST */
-
-.safety-list {
-    list-style: none;
-    padding: 0;
-}
-
-.safety-list li {
-    margin-bottom: 0.5rem;
-}
-
-.safety-list label {
     display: flex;
     align-items: center;
     gap: 0.6rem;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    accent-color: var(--primary);
+}
+
+.plan-right h2 {
+    margin-bottom: 0.25rem;
+    color: var(--primary);
+    font-size: 1.6rem;
+}
+
+.plan-right > p {
+    margin-bottom: 1rem;
+    color: var(--secondary);
+}
+
+.safety-list {
+    list-style: none;
+}
+
+.safety-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.safety-list li:last-child {
+    border-bottom: none;
+}
+
+.safety-list label {
+    display: grid;
+    grid-template-columns: 1rem 2.5rem minmax(0, 1fr);
+    align-items: center;
+    gap: 0.65rem;
     cursor: pointer;
 }
 
 .safety-letter {
-    min-width: 2.5rem;
+    color: var(--primary);
     font-family: var(--font-heading);
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary);
+    line-height: 1;
     text-align: center;
 }
 
 .safety-list label > span:last-child {
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
-
-/* DESKTOP: TWO EQUAL COLUMNS */
-
-@media screen and (min-width: 800px) {
-    main {
-        padding: 2rem;
-    }
-
-    .plan-layout {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-    }
-}
-
-
-
-
-/* Footer    */
+/* footer */
 footer {
-    margin-top: 3rem;
     padding: 1.5rem 1rem;
-
     color: var(--surface);
     background-color: var(--dark);
-
     text-align: center;
 }
 
@@ -289,16 +301,9 @@ footer p {
     font-size: 0.8rem;
 }
 
-
-
+/* tablet */
 @media screen and (min-width: 700px) {
-
-    /* Header */
-
     header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         padding: 1rem 2rem;
     }
 
@@ -309,21 +314,22 @@ footer p {
     }
 
     .brand p {
+        margin-top: 0;
         padding-left: 1rem;
         border-left: 1px solid var(--secondary);
     }
 
+    nav {
+        position: static;
+        width: auto;
+    }
 
-    /* Navigation */
-
-    nav ul {
+    nav ul,
+    nav ul.active {
         display: flex;
         flex-direction: row;
         gap: 0.25rem;
-
-        margin-top: 0;
         padding: 0;
-
         background-color: transparent;
     }
 
@@ -331,26 +337,29 @@ footer p {
         display: none;
     }
 
-
-    /* Main */
-
-    main {
-        padding: 2rem;
+    .plan-left,
+    .plan-right {
+        padding: 1.5rem;
     }
-
-
 }
 
-
-
+/* desktop */
+@media screen and (min-width: 800px) {
+    .plan-layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.5rem;
+    }
+}
 
 @media screen and (min-width: 1000px) {
-
-
-
-    /* Footer */
-
     footer {
         padding: 2rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    nav a,
+    .hamburger span {
+        transition: none;
     }
 }

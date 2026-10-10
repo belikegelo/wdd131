@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan - RideMoto - Angelo Antimo</title>
-    <meta name="description" content="RideMoto: Plan your motorcycle travel in the Philippines.">
+    <title>Plan Your Ride - RideMoto</title>
+    <meta name="description" content="Plan your motorcycle trip in the Philippines with a destination selector, budget checklist, and BLOWBAGETS safety checklist.">
     <meta name="author" content="Angelo Antimo">
     <link rel="stylesheet" href="styles/plan.css">
     <script src="scripts/plan.js" defer></script>
 
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
@@ -20,24 +20,24 @@
             <h2>RideMoto</h2>
             <p>Ride. Explore. Repeat.</p>
         </div>
-        <button class="hamburger" aria-label="Toggle navigation menu">
+
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
+
         <nav>
             <ul>
                 <li><a href="main.html">Home</a></li>
                 <li><a href="destination.html">Destinations</a></li>
-                <li><a href="plan.html">Plan</a></li>
+                <li><a href="plan.html" aria-current="page">Plan</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <main>
         <div class="plan-layout">
-
-            <!-- LEFT SIDE -->
             <section class="plan-left">
                 <h1>Plan Your Ride</h1>
 
@@ -47,25 +47,21 @@
                 </select>
 
                 <div id="destination-result" class="destination-result">
-
                     <p>
                         <strong>Place:</strong>
                         <span id="destination-name"></span>
                     </p>
 
-                    <img id="destination-image" src="" alt="" loading="lazy">
+                    <img id="destination-image" src="" alt="" loading="lazy" decoding="async">
 
                     <p>
                         <strong>Google Maps:</strong>
-                        <a id="maps-link" href="" target="_blank"
-                            rel="noopener noreferrer">
+                        <a id="maps-link" href="" target="_blank" rel="noopener noreferrer">
                             Get Directions
                         </a>
                     </p>
-
                 </div>
 
-                <!-- FIXED BUDGET CHECKLIST -->
                 <section class="budget-section">
                     <h2>Budget Checklist</h2>
 
@@ -96,14 +92,11 @@
                 </section>
             </section>
 
-
-            <!-- RIGHT SIDE -->
             <section class="plan-right">
                 <h2>BLOWBAGETS</h2>
                 <p>Check your motorcycle before riding.</p>
 
                 <ul class="safety-list">
-
                     <li>
                         <label>
                             <input type="checkbox" id="safety-brakes" class="save-checkbox">
@@ -183,18 +176,14 @@
                             <span><strong>Self</strong><br>Wear a helmet and bring your license.</span>
                         </label>
                     </li>
-
                 </ul>
             </section>
-
         </div>
     </main>
 
-
     <footer>
         <p>&copy; <span id="currentyear"></span> 🌱 Angelo Antimo 🌱 Cavite, Philippines</p>
-        <p class="last-modified">Last Modified: <span id="lastModified"></span></p>  
-    </footer> 
-    
+        <p class="last-modified">Last Modified: <span id="lastModified"></span></p>
+    </footer>
 </body>
 </html>
