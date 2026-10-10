@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RideMoto -Project by Angelo Antimo</title>
-    <meta name="description" content="RideMoto: A responsive website for exploring motorcycle travel destinations in the Philippines.">
+    <title>RideMoto - Project by Angelo Antimo</title>
+    <meta name="description" content="RideMoto: Explore motorcycle destinations and plan your next ride in the Philippines.">
     <meta name="author" content="Angelo Antimo">
     <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/main.js" defer></script>
-    <!-- Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <header>
@@ -20,11 +19,13 @@
             <h2>RideMoto</h2>
             <p>Ride. Explore. Repeat.</p>
         </div>
-        <button class="hamburger" aria-label="Toggle navigation menu">
+
+        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span>
             <span></span>
             <span></span>
         </button>
+
         <nav>
             <ul>
                 <li><a href="main.html">Home</a></li>
@@ -33,42 +34,38 @@
             </ul>
         </nav>
     </header>
-    
+
     <main>
-    <!-- Hero Section -->
         <section class="hero">
             <img
-                src="https://www.motodeal.com.ph/custom/blog-post/header/2022-honda-adv-160-6367b048def1f.jpeg"
-                alt="Honda ADV 160 motorcycle"
-                loading="lazy">
+                src="https://media.istockphoto.com/id/491617558/photo/motorcyclist-in-action-in-sunset-light.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=NNeGVIDD2p6LqQ221E8PFyNfxOzUwzcmqLCNSlW7Nic="
+                alt="Motorcyclist riding at sunset"
+                loading="lazy"
+                decoding="async">
 
             <div class="hero-text">
                 <h1>Find Your Next Ride</h1>
-                <p>Explore the Philippines by motorcycle</p>
+                <p>Explore the Philippines by motorcycle.</p>
             </div>
         </section>
 
-        <!-- About Section -->
         <section class="about">
             <h2>About RideMoto</h2>
-
             <p>
                 RideMoto is a motorcycle travel guide for riders who want
                 to explore the Philippines on two wheels. Discover new
                 destinations, find routes worth riding, and get simple
                 information to prepare for your next adventure.
             </p>
-
             <p>
                 Whether you are planning a weekend ride or a longer journey,
-                RideMoto helps you find your next destination and start
-                your ride with confidence.
+                RideMoto helps you find your next destination and prepare
+                for your ride with confidence.
             </p>
         </section>
 
-        <!-- Homepage Options -->
         <section class="options">
-            <a class="option-card" href="destination.html" target="_blank">
+            <a class="option-card" href="destination.html">
                 <h2>Explore Rides</h2>
                 <p>
                     Discover motorcycle destinations and find your next
@@ -77,7 +74,7 @@
                 <span class="card-link">Explore destinations &rarr;</span>
             </a>
 
-            <a class="option-card" href="plan.html" target="_blank">
+            <a class="option-card" href="plan.html">
                 <h2>Plan a Ride</h2>
                 <p>
                     Prepare for your trip with a simple checklist of
@@ -87,10 +84,10 @@
             </a>
         </section>
     </main>
-    
+
     <footer>
-        <p>&copy; <span id="currentyear"></span> 🌱 Angelo Antimo 🌱 Cavite, Philippines</p>
-        <p class="last-modified">Last Modified: <span id="lastModified"></span></p>  
-    </footer> 
+        <p>&copy; <span id="currentyear"></span>🌱 Angelo Antimo 🌱 Cavite, Philippines</p>
+        <p class="last-modified">Last Modified: <span id="lastModified"></span></p>
+    </footer>
 </body>
 </html>

@@ -1,11 +1,5 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
+/* universal */
 :root {
     --primary: #5A4636;
     --secondary: #8A8580;
@@ -18,6 +12,11 @@
     --font-body: "Inter", sans-serif;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: var(--font-body);
@@ -36,16 +35,20 @@ a {
     color: inherit;
 }
 
-
-
-header {
-    position: relative;
-    padding: 1rem;
-    background-color: var(--dark);
-    color: var(--surface);
+button {
+    font: inherit;
 }
 
-/* Logo */
+/* header */
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    color: var(--surface);
+    background-color: var(--dark);
+}
 
 .brand h2 {
     color: var(--surface);
@@ -55,27 +58,26 @@ header {
 }
 
 .brand p {
-    margin-top: 0.15rem;
+    margin-top: 0.1rem;
     color: var(--secondary);
     font-size: 0.8rem;
 }
 
-
-
-
-/* Mobile Navigation */
+nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+}
 
 nav ul {
     display: none;
     flex-direction: column;
     gap: 0.25rem;
-
-    margin-top: 1rem;
-    padding: 0.75rem;
-
+    padding: 0.5rem 1rem 1rem;
     list-style: none;
     background-color: var(--dark);
-    border-radius: 6px;
 }
 
 nav ul.active {
@@ -84,12 +86,10 @@ nav ul.active {
 
 nav a {
     display: block;
-    padding: 0.7rem 1rem;
-
+    padding: 0.65rem 1rem;
     color: var(--surface);
     text-decoration: none;
     border-radius: 4px;
-
     transition: background-color 0.2s ease;
 }
 
@@ -98,17 +98,8 @@ nav a:focus-visible {
     background-color: var(--primary);
 }
 
-
-/* Hamburger Button */
-
 .hamburger {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-
-    display: block;
     padding: 0.5rem;
-
     background: none;
     border: none;
     cursor: pointer;
@@ -118,19 +109,14 @@ nav a:focus-visible {
     display: block;
     width: 25px;
     height: 3px;
-
     margin: 5px 0;
-
     background-color: var(--surface);
     border-radius: 2px;
-
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Hamburger Animation */
-
 .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: translateY(8px) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -138,79 +124,72 @@ nav a:focus-visible {
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
+    transform: translateY(-8px) rotate(-45deg);
 }
 
-
-
+/* main */
 main {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1.5rem 1rem;
 }
-
-
 
 .hero {
     position: relative;
-    min-height: 300px;
+    width: 100%;
+    height: clamp(320px, 45vw, 560px);
     overflow: hidden;
-
     background-color: var(--dark);
-    border-radius: 8px;
 }
 
 .hero img {
-    display: block;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: 300px;
-
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
-/* Dark Overlay */
-
 .hero::after {
-    content: "";
     position: absolute;
     inset: 0;
-
+    z-index: 1;
+    content: "";
     background: linear-gradient(
-        to right,
+        to top,
         rgba(28, 28, 28, 0.8),
-        rgba(28, 28, 28, 0.2)
+        rgba(28, 28, 28, 0.05) 75%
     );
 }
 
-/* Hero Text */
-
 .hero-text {
     position: absolute;
-    z-index: 1;
-    top: 50%;
-    left: 1.5rem;
-    right: 1.5rem;
-
-    transform: translateY(-50%);
+    bottom: 1.5rem;
+    left: max(1rem, calc((100vw - 1200px) / 2));
+    z-index: 2;
     color: var(--surface);
 }
 
 .hero-text h1 {
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
+    margin-bottom: 0.25rem;
+    font-size: clamp(1.4rem, 3vw, 2.4rem);
     line-height: 1.2;
 }
 
 .hero-text p {
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
 }
 
-
+.about,
+.options {
+    width: calc(100% - 2rem);
+    max-width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 .about {
-    padding: 2rem 0;
+    padding: 2.5rem 0 2rem;
+    text-align: left;
 }
 
 .about h2 {
@@ -220,6 +199,7 @@ main {
 }
 
 .about p {
+    max-width: 75ch;
     margin-bottom: 1rem;
 }
 
@@ -227,55 +207,41 @@ main {
     margin-bottom: 0;
 }
 
-
-
 .options {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
+    margin-bottom: 2rem;
 }
-
-/* Individual Cards */
 
 .option-card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
     padding: 1.5rem;
-
     color: var(--dark);
     background-color: var(--surface);
-
-    border: 1px solid var(--border);
-    border-radius: 8px;
-
+    border: 1px solid var(--primary);
+    border-radius: 6px;
     text-decoration: none;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .option-card h2 {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     color: var(--primary);
-    font-size: 1.3rem;
+    font-size: 1.25rem;
 }
 
 .option-card p {
     margin-bottom: 1rem;
 }
 
-/* Card Link Text */
-
 .card-link {
     margin-top: auto;
     color: var(--primary);
     font-weight: 600;
 }
-
-/* Card Hover and Keyboard Focus */
 
 .option-card:hover,
 .option-card:focus-visible {
@@ -288,15 +254,11 @@ main {
     outline-offset: 3px;
 }
 
-
-
+/* footer */
 footer {
-    margin-top: 3rem;
     padding: 1.5rem 1rem;
-
     color: var(--surface);
     background-color: var(--dark);
-
     text-align: center;
 }
 
@@ -309,17 +271,9 @@ footer p {
     font-size: 0.8rem;
 }
 
-
-
-
+/* tablet */
 @media screen and (min-width: 700px) {
-
-    /* Header */
-
     header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
         padding: 1rem 2rem;
     }
 
@@ -334,17 +288,17 @@ footer p {
         border-left: 1px solid var(--secondary);
     }
 
+    nav {
+        position: static;
+        width: auto;
+    }
 
-    /* Navigation */
-
-    nav ul {
+    nav ul,
+    nav ul.active {
         display: flex;
         flex-direction: row;
         gap: 0.25rem;
-
-        margin-top: 0;
         padding: 0;
-
         background-color: transparent;
     }
 
@@ -352,70 +306,23 @@ footer p {
         display: none;
     }
 
-
-    /* Main */
-
-    main {
-        padding: 2rem;
-    }
-
-
-    /* Hero */
-
-    .hero img {
-        height: 400px;
-    }
-
-    .hero-text {
-        left: 3rem;
-    }
-
-    .hero-text h1 {
-        font-size: 2.8rem;
-    }
-
-    .hero-text p {
-        font-size: 1.2rem;
-    }
-
-
-    /* Option Cards */
-
     .options {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        margin-bottom: 3rem;
     }
 }
 
-
-
-
+/* desktop */
 @media screen and (min-width: 1000px) {
-
-    /* Hero */
-
-    .hero img {
-        height: 450px;
-    }
-
     .hero-text {
-        left: 4rem;
+        bottom: 2rem;
     }
-
-    .hero-text h1 {
-        font-size: 3.2rem;
-    }
-
-
-    /* About */
 
     .about {
-        max-width: 850px;
-        margin: 0 auto;
-        padding: 3rem 0;
+        padding-top: 3rem;
+        padding-bottom: 2.5rem;
     }
-
-
-    /* Option Cards */
 
     .options {
         gap: 1.5rem;
@@ -424,9 +331,6 @@ footer p {
     .option-card {
         padding: 2rem;
     }
-
-
-    /* Footer */
 
     footer {
         padding: 2rem;
