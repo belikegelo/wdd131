@@ -118,35 +118,6 @@ main h1 {
     color: var(--primary-color);
 }
 
-/* Figure Grid - Mobile: 1 column */
-/* main figure {
-    margin-bottom: 2rem;
-    background-color: var(--white);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-main figure img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-main figcaption {
-    padding: 1rem;
-    text-align: center;
-    font-weight: 600;
-    color: var(--primary-color);
-    background-color: #f9f9f9;
-} */
-
-/* Temple Cards */
-/* .res-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-} */
 
 .res-grid {
     display: grid;

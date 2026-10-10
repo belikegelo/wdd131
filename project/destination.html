@@ -6,8 +6,9 @@
     <title>Destinations - RideMoto</title>
     <meta name="description" content="RideMoto: Explore motorcycle travel destinations in the Philippines.">
     <meta name="author" content="Angelo Antimo">
+    <link rel="stylesheet" href="styles/destination.css">
+    <script src="scripts/destination.js" defer></script>
     <link rel="stylesheet" href="styles/main.css">
-    <script src="scripts/main.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +34,105 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="destinations-main">
+
+        <section class="destinations-intro">
+            <p class="eyebrow">YOUR NEXT ADVENTURE STARTS HERE</p>
+
+            <h1>Destinations</h1>
+
+            <p class="intro-description">
+                Discover scenic roads, mountain views, and beautiful beaches
+                around Luzon. Find a motorcycle destination that fits your
+                time, budget, and riding experience.
+            </p>
+        </section>
+
+        <section class="destination-browser" aria-labelledby="filter-heading">
+
+            <h2 id="filter-heading">Find Your Next Ride</h2>
+
+            <p class="filter-description">
+                Choose a filter to explore your next motorcycle destination.
+            </p>
+
+            <div class="destination-filters" role="group" aria-label="Filter destinations">
+
+                <button
+                    type="button"
+                    class="filter-button is-active"
+                    data-filter="all"
+                    aria-pressed="true">
+                    All Destinations
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-button"
+                    data-filter="budget"
+                    aria-pressed="false">
+                    Budget Friendly
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-button"
+                    data-filter="nearest"
+                    aria-pressed="false">
+                    Nearest
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-button"
+                    data-filter="farthest"
+                    aria-pressed="false">
+                    Farthest
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-button"
+                    data-filter="shortest"
+                    aria-pressed="false">
+                    Shortest Ride
+                </button>
+
+                <button
+                    type="button"
+                    class="filter-button"
+                    data-filter="longest"
+                    aria-pressed="false">
+                    Longest Ride
+                </button>
+
+            </div>
+
+            <p class="estimate-notice">
+                Estimates are based on a route from Manila. Distances are
+                round-trip; riding times are one-way estimates. Budgets are
+                per rider and exclude accommodation.
+            </p>
+
+            <p id="results-count" class="results-count" aria-live="polite">
+                Showing all destinations
+            </p>
+
+            <!-- JavaScript will generate destination cards here. -->
+            <div class="destination-grid" id="destination-grid">
+            </div>
+
+        </section>
+
+        <aside class="rider-reminder">
+            <h2>Ride Smart. Ride Safe.</h2>
+
+            <p>
+                Check weather conditions, road closures, fuel stops, and your
+                motorcycle before departure. Review the suggested route
+                carefully and choose roads suitable for your motorcycle.
+            </p>
+        </aside>
 
     </main>
     

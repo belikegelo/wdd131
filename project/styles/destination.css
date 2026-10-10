@@ -1,0 +1,458 @@
+
+/* ========================================
+   DESTINATIONS PAGE
+======================================== */
+
+/* CSS Variables */
+:root {
+    --dest-primary: #12372a;
+    --dest-secondary: #436850;
+    --dest-accent: #adbc9f;
+    --dest-accent-light: #e8eee5;
+
+    --dest-text: #26332c;
+    --dest-muted: #68756d;
+    --dest-white: #ffffff;
+    --dest-background: #f7f8f5;
+    --dest-border: #dce3dc;
+    --dest-warning-background: #fff5df;
+    --dest-warning-text: #76551c;
+
+    --dest-shadow: 0 8px 24px rgba(18, 55, 42, 0.08);
+
+    --dest-radius: 12px;
+    --dest-font-heading: "Montserrat", sans-serif;
+    --dest-font-body: "Inter", sans-serif;
+}
+
+/* Main container */
+.destinations-main {
+    width: min(1180px, calc(100% - 2rem));
+    margin: 3rem auto;
+}
+
+/* ========================================
+   PAGE INTRODUCTION
+======================================== */
+
+.destinations-intro {
+    max-width: 760px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.eyebrow {
+    margin-bottom: 0.75rem;
+    color: var(--dest-secondary);
+    font-family: var(--dest-font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.destinations-intro h1 {
+    margin-bottom: 1rem;
+    color: var(--dest-primary);
+    font-family: var(--dest-font-heading);
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.2;
+}
+
+.intro-description {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--dest-muted);
+    font-family: var(--dest-font-body);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* ========================================
+   FILTER SECTION
+======================================== */
+
+.destination-browser {
+    margin-bottom: 3rem;
+}
+
+.destination-browser > h2 {
+    margin-bottom: 0.5rem;
+    color: var(--dest-primary);
+    font-family: var(--dest-font-heading);
+    font-size: 1.5rem;
+}
+
+.filter-description {
+    margin-bottom: 1.25rem;
+    color: var(--dest-muted);
+    font-family: var(--dest-font-body);
+    line-height: 1.6;
+}
+
+/* Filter buttons */
+.destination-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    margin-bottom: 1.25rem;
+}
+
+.filter-button {
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--dest-border);
+    border-radius: 999px;
+
+    background-color: var(--dest-white);
+    color: var(--dest-primary);
+
+    font-family: var(--dest-font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.filter-button:hover {
+    border-color: var(--dest-secondary);
+    background-color: var(--dest-accent-light);
+}
+
+.filter-button.is-active {
+    border-color: var(--dest-primary);
+    background-color: var(--dest-primary);
+    color: var(--dest-white);
+}
+
+.filter-button:focus-visible {
+    outline: 3px solid var(--dest-accent);
+    outline-offset: 3px;
+}
+
+/* Explanation of estimates */
+.estimate-notice {
+    margin-bottom: 1.25rem;
+    padding: 0.9rem 1rem;
+    border-left: 4px solid var(--dest-accent);
+
+    background-color: var(--dest-accent-light);
+    color: var(--dest-primary);
+
+    font-family: var(--dest-font-body);
+    font-size: 0.875rem;
+    line-height: 1.7;
+}
+
+.results-count {
+    margin-bottom: 1rem;
+    color: var(--dest-muted);
+    font-family: var(--dest-font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* ========================================
+   DESTINATION CARD GRID
+======================================== */
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+/* Individual card */
+.destination-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+
+    border: 1px solid var(--dest-border);
+    border-radius: var(--dest-radius);
+
+    background-color: var(--dest-white);
+    box-shadow: var(--dest-shadow);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(18, 55, 42, 0.13);
+}
+
+/* Destination image */
+.destination-image {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+
+    background-color: var(--dest-accent-light);
+}
+
+/* Card text and information */
+.destination-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1.25rem;
+}
+
+.destination-card-topline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    margin-bottom: 0.75rem;
+}
+
+.destination-province {
+    color: var(--dest-secondary);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.difficulty-tag {
+    padding: 0.3rem 0.55rem;
+    border-radius: 999px;
+
+    background-color: var(--dest-accent-light);
+    color: var(--dest-primary);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.difficulty-tag.moderate {
+    background-color: var(--dest-warning-background);
+    color: var(--dest-warning-text);
+}
+
+.difficulty-tag.challenging {
+    border: 1px solid var(--dest-border);
+    background-color: var(--dest-background);
+    color: var(--dest-primary);
+}
+
+.destination-card h3 {
+    margin-bottom: 0.75rem;
+    color: var(--dest-primary);
+
+    font-family: var(--dest-font-heading);
+    font-size: 1.15rem;
+    line-height: 1.4;
+}
+
+.destination-highlights {
+    margin-bottom: 1rem;
+    color: var(--dest-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* Distance, time, and budget */
+.destination-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+
+    margin: 0 0 1rem;
+    padding: 1rem 0;
+
+    border-top: 1px solid var(--dest-border);
+    border-bottom: 1px solid var(--dest-border);
+}
+
+.destination-stats > div {
+    min-width: 0;
+}
+
+.destination-stats dt {
+    margin-bottom: 0.3rem;
+    color: var(--dest-muted);
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+.destination-stats dd {
+    margin: 0;
+    color: var(--dest-primary);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.destination-stats .budget-stat {
+    grid-column: 1 / -1;
+}
+
+.destination-stats .budget-stat dd {
+    font-size: 1.1rem;
+}
+
+/* Road notes */
+.destination-road-note {
+    margin-bottom: 1.25rem;
+    color: var(--dest-muted);
+    font-size: 0.85rem;
+    line-height: 1.7;
+}
+
+.destination-road-note strong {
+    color: var(--dest-text);
+}
+
+/* Google Maps link */
+.destination-map-link {
+    display: inline-block;
+    width: fit-content;
+    margin-top: auto;
+    padding: 0.75rem 1rem;
+
+    border: 1px solid var(--dest-primary);
+    border-radius: 6px;
+
+    background-color: var(--dest-primary);
+    color: var(--dest-white);
+
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.destination-map-link:hover {
+    background-color: var(--dest-white);
+    color: var(--dest-primary);
+}
+
+.destination-map-link:focus-visible {
+    outline: 3px solid var(--dest-accent);
+    outline-offset: 3px;
+}
+
+/* ========================================
+   NO RESULTS MESSAGE
+======================================== */
+
+.no-results {
+    grid-column: 1 / -1;
+    padding: 2rem 1rem;
+    border: 1px solid var(--dest-border);
+    border-radius: var(--dest-radius);
+
+    background-color: var(--dest-white);
+    color: var(--dest-muted);
+    text-align: center;
+    line-height: 1.7;
+}
+
+/* ========================================
+   SAFETY REMINDER
+======================================== */
+
+.rider-reminder {
+    margin-top: 3rem;
+    padding: 1.5rem;
+
+    border: 1px solid var(--dest-border);
+    border-radius: var(--dest-radius);
+
+    background-color: var(--dest-accent-light);
+}
+
+.rider-reminder h2 {
+    margin-bottom: 0.5rem;
+    color: var(--dest-primary);
+    font-family: var(--dest-font-heading);
+    font-size: 1.2rem;
+}
+
+.rider-reminder p {
+    color: var(--dest-text);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 950px) {
+    .destination-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+    .destinations-main {
+        width: calc(100% - 1.5rem);
+        margin: 2rem auto;
+    }
+
+    .destinations-intro {
+        margin-bottom: 2rem;
+    }
+
+    .destinations-intro h1 {
+        font-size: 2rem;
+    }
+
+    .destination-browser > h2 {
+        font-size: 1.3rem;
+    }
+
+    .destination-filters {
+        gap: 0.5rem;
+    }
+
+    .filter-button {
+        padding: 0.65rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .destination-image {
+        height: 220px;
+    }
+
+    .rider-reminder {
+        margin-top: 2rem;
+        padding: 1.15rem;
+    }
+}
+
+/* Respect reduced-motion settings */
+@media (prefers-reduced-motion: reduce) {
+    .destination-card,
+    .filter-button,
+    .destination-map-link {
+        transition: none;
+    }
+
+    .destination-card:hover {
+        transform: none;
+    }
+}
