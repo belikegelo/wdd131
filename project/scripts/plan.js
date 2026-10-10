@@ -45,7 +45,7 @@ const destinations = [
             difficulty: "Easy to Moderate",
             highlights: "Taal Lake, bulalo restaurants, scenic views",
             roadNote: "Expect traffic on weekends.",
-            imageUrl: "images/tagaytay.webp"
+            imageUrl: "https://res.klook.com/image/upload/w_500,h_313,c_fill,q_85/activities/dgcekk1woacha5fgzayn.jpg"
         },
         {
             name: "Tanay / Marilaque",
@@ -57,7 +57,7 @@ const destinations = [
             difficulty: "Moderate",
             highlights: "Mountain roads, Sierra Madre views, cafes",
             roadNote: "Watch for blind corners and gravel.",
-            imageUrl: "images/tanay.webp"
+            imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTuKz8CoApFl2AnfSKxoVf-kZSIzHAljGJR445zS4insCcWTDXvmaTn5g&s=10"
         },
         {
             name: "Pililla Wind Farm",
@@ -69,7 +69,7 @@ const destinations = [
             difficulty: "Moderate",
             highlights: "Wind turbines, green hills, photo spots",
             roadNote: "Check the weather before riding.",
-            imageUrl: "images/pililla.webp"
+            imageUrl: "https://static.wixstatic.com/media/941b16_3e7cd313899f42cdb1a05aa11c4e4092~mv2.jpg/v1/fill/w_1620,h_1080,al_c/941b16_3e7cd313899f42cdb1a05aa11c4e4092~mv2.jpg"
         },
         {
             name: "Mount Samat",
@@ -81,7 +81,7 @@ const destinations = [
             difficulty: "Moderate",
             highlights: "Dambana ng Kagitingan, mountain scenery",
             roadNote: "Check opening hours before departure.",
-            imageUrl: "images/mount-samat.webp"
+            imageUrl: "https://bataan.gov.ph/wp-content/uploads/2021/09/DJI_0971-scaled.jpg"
         },
         {
             name: "Subic Bay",
@@ -93,7 +93,7 @@ const destinations = [
             difficulty: "Moderate",
             highlights: "Waterfront views, cafes, restaurants",
             roadNote: "Allow extra time for traffic.",
-            imageUrl: "images/subic.webp"
+            imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROfBPaiJzJ5YuhimdI90Zj-C4d6pX6ikRqeO5YBb6yfj4LA8ke-gBGS5Ly&s=10"
         },
         {
             name: "Laiya Beach",
@@ -105,7 +105,7 @@ const destinations = [
             difficulty: "Moderate",
             highlights: "Beaches, resorts, coastal scenery",
             roadNote: "Check beach entrance and parking fees.",
-            imageUrl: "images/laiya.webp"
+            imageUrl: "https://www.philippinebeaches.org/wp-content/uploads/2017/03/La-Luz.jpg"
         },
         {
             name: "Liwliwa Beach",
@@ -117,7 +117,7 @@ const destinations = [
             difficulty: "Challenging",
             highlights: "Surfing, beach views, mountain scenery",
             roadNote: "Plan rest stops for this longer ride.",
-            imageUrl: "images/liwliwa.webp"
+            imageUrl: "https://i0.wp.com/transitpinas.com/wp-content/uploads/2023/07/FB_IMG_1688282911653.jpg?resize=604%2C340&ssl=1"
         },
         {
             name: "Baler",
@@ -129,7 +129,7 @@ const destinations = [
             difficulty: "Challenging",
             highlights: "Sabang Beach, surfing, coastal scenery",
             roadNote: "An overnight stay is recommended.",
-            imageUrl: "images/baler.webp"
+            imageUrl: "https://images.summitmedia-digital.com/spotph/images/2017/11/02/Baler_DicasalarinCove.jpg"
         },
         {
             name: "Baguio City",
@@ -141,85 +141,113 @@ const destinations = [
             difficulty: "Challenging",
             highlights: "Cool weather, Burnham Park, mountain views",
             roadNote: "Prepare for winding roads and changing weather.",
-            imageUrl: "images/baguio.webp"
+            imageUrl: "https://newsinfo.inquirer.net/files/2026/03/Mirador-Hill-baguio-21march2026-scaled.jpg"
         }
     ];
 
 
-    // GET DESTINATION ELEMENTS
-    const destinationSelect = document.getElementById("destination-select");
-    const destinationDetails = document.getElementById("destination-details");
-    const destinationImage = document.getElementById("destination-image");
-    const destinationName = document.getElementById("destination-name");
-    const destinationDescription = document.getElementById("destination-description");
-    const mapsLink = document.getElementById("maps-link");
+// GET HTML ELEMENTS
+const destinationSelect = document.getElementById("destination-select");
+const destinationResult = document.getElementById("destination-result");
+const destinationName = document.getElementById("destination-name");
+const destinationImage = document.getElementById("destination-image");
+const mapsLink = document.getElementById("maps-link");
+const checkboxes = document.querySelectorAll(".save-checkbox");
+
+// KEY USED TO SAVE THE PLAN
+const storageKey = "ridemotoPlan";
 
 
-    // ADD DESTINATIONS TO DROPDOWN
+// LOAD SAVED DATA
+let savedPlan = {};
+
+try {
+    savedPlan = JSON.parse(localStorage.getItem(storageKey)) || {};
+} catch (error) {
+    savedPlan = {};
+}
+
+
+// ADD DESTINATIONS TO THE DROPDOWN
+destinations.forEach(function (destination) {
+    const option = new Option(destination.name, destination.name);
+    destinationSelect.add(option);
+});
+
+
+// RESTORE THE SELECTED DESTINATION
+if (savedPlan.destination) {
+    destinationSelect.value = savedPlan.destination;
+}
+
+
+// RESTORE CHECKBOXES
+checkboxes.forEach(function (checkbox) {
     if (
-        destinationSelect &&
-        destinationDetails &&
-        destinationImage &&
-        destinationName &&
-        destinationDescription &&
-        mapsLink
+        savedPlan.checkboxes &&
+        savedPlan.checkboxes[checkbox.id] !== undefined
     ) {
-        destinations.forEach(function (destination, index) {
-            const option = new Option(destination.name, index);
-            destinationSelect.add(option);
-        });
-
-
-        // DISPLAY SELECTED DESTINATION
-        destinationSelect.addEventListener("change", function () {
-
-            const selectedIndex = destinationSelect.value;
-
-            // Hide details when no destination is selected
-            if (selectedIndex === "") {
-                destinationDetails.hidden = true;
-                return;
-            }
-
-            const destination = destinations[Number(selectedIndex)];
-
-            if (!destination) {
-                destinationDetails.hidden = true;
-                return;
-            }
-
-            // Show destination image
-            destinationImage.src = destination.imageUrl;
-            destinationImage.alt = destination.name;
-            destinationImage.loading = "lazy";
-
-            // Show destination name
-            destinationName.textContent = destination.name;
-
-            // Show destination information and estimated budget
-            destinationDescription.textContent =
-                destination.province +
-                " | Round trip: " + destination.roundTripKm + " km" +
-                " | Travel time: " + destination.travelHours +
-                " | Difficulty: " + destination.difficulty +
-                " | Estimated budget: ₱" +
-                destination.budgetMin.toLocaleString("en-PH") +
-                "-₱" +
-                destination.budgetMax.toLocaleString("en-PH") +
-                " | Highlights: " + destination.highlights +
-                " | Road note: " + destination.roadNote;
-
-            // Create Google Maps directions from Manila
-            const destinationAddress =
-                destination.name + ", " +
-                destination.province + ", Philippines";
-
-            mapsLink.href =
-                "https://www.google.com/maps/dir/?api=1" +
-                "&origin=" + encodeURIComponent("Manila, Philippines") +
-                "&destination=" + encodeURIComponent(destinationAddress);
-
-            // Show destination details
-            destinationDetails.hidden = false;
-        });
+        checkbox.checked = savedPlan.checkboxes[checkbox.id];
     }
+});
+
+
+// SAVE DESTINATION AND CHECKBOXES
+function savePlan() {
+    const planData = {
+        destination: destinationSelect.value,
+        checkboxes: {}
+    };
+
+    checkboxes.forEach(function (checkbox) {
+        planData.checkboxes[checkbox.id] = checkbox.checked;
+    });
+
+    localStorage.setItem(storageKey, JSON.stringify(planData));
+}
+
+
+// SHOW THE SELECTED DESTINATION
+function showDestination() {
+    const selectedDestination = destinations.find(function (destination) {
+        return destination.name === destinationSelect.value;
+    });
+
+    if (!selectedDestination) {
+        destinationResult.classList.remove("show");
+        return;
+    }
+
+    destinationName.textContent = selectedDestination.name;
+
+    destinationImage.src = selectedDestination.imageUrl;
+    destinationImage.alt = selectedDestination.name;
+
+    const address =
+        selectedDestination.name + ", " +
+        selectedDestination.province + ", Philippines";
+
+    mapsLink.href =
+        "https://www.google.com/maps/dir/?api=1" +
+        "&origin=" + encodeURIComponent("Manila, Philippines") +
+        "&destination=" + encodeURIComponent(address);
+
+    destinationResult.classList.add("show");
+}
+
+
+// WHEN THE DESTINATION CHANGES
+destinationSelect.addEventListener("change", function () {
+    showDestination();
+    savePlan();
+});
+
+
+// SAVE EACH CHECKBOX WHEN IT CHANGES
+checkboxes.forEach(function (checkbox) {
+    checkbox.addEventListener("change", savePlan);
+});
+
+
+// DISPLAY SAVED DESTINATION AFTER REFRESH
+showDestination();
