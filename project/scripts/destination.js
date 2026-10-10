@@ -36,506 +36,266 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-/* ========================================
-   DESTINATION DATA
-======================================== */
-
 const destinations = [
     {
         name: "Tagaytay City",
         province: "Cavite",
         roundTripKm: 120,
-        travelHoursMin: 1.5,
-        travelHoursMax: 2.5,
+        travelHours: "1.5-2.5 hours",
         budgetMin: 800,
         budgetMax: 1200,
         difficulty: "Easy to Moderate",
-        difficultyClass: "easy",
-        highlights: [
-            "Taal Lake viewpoints",
-            "Bulalo restaurants",
-            "Scenic ridge roads"
-        ],
-        roadNote:
-            "A good starter ride. Expect traffic near popular viewpoints and on weekends.",
-        imageUrl:
-            "https://sp-ao.shortpixel.ai/client/to_webp%2Cq_glossy%2Cret_img%2Cw_1024%2Ch_683/https%3A/ocarramedia.com/wp-content/uploads/2025/08/tagaytay-view-lake-taal-volcano-island.webp",
-        imageAlt:
-            "Scenic view of Taal Lake and Volcano from Tagaytay"
+        highlights: "Taal Lake, bulalo restaurants, scenic views",
+        roadNote: "Expect traffic on weekends.",
+        imageUrl: "images/tagaytay.webp"
     },
-
     {
         name: "Tanay / Marilaque",
         province: "Rizal",
         roundTripKm: 140,
-        travelHoursMin: 2,
-        travelHoursMax: 3,
+        travelHours: "2-3 hours",
         budgetMin: 700,
         budgetMax: 1300,
         difficulty: "Moderate",
-        difficultyClass: "moderate",
-        highlights: [
-            "Winding mountain roads",
-            "Sierra Madre views",
-            "Breakfast stops"
-        ],
-        roadNote:
-            "Take corners carefully. Watch for gravel, blind turns, changing weather, and other riders.",
-        imageUrl:
-            "https://i0.wp.com/www.traveling-up.com/wp-content/uploads/2015/03/motorcycle-marilaque-road.jpg",
-        imageAlt:
-            "A motorcycle traveling along a winding mountain road"
+        highlights: "Mountain roads, Sierra Madre views, cafes",
+        roadNote: "Watch for blind corners and gravel.",
+        imageUrl: "images/tanay.webp"
     },
-
     {
         name: "Pililla Wind Farm",
         province: "Rizal",
         roundTripKm: 170,
-        travelHoursMin: 2.5,
-        travelHoursMax: 3.5,
+        travelHours: "2.5-3.5 hours",
         budgetMin: 900,
         budgetMax: 1500,
         difficulty: "Moderate",
-        difficultyClass: "moderate",
-        highlights: [
-            "Wind turbines",
-            "Rolling green hills",
-            "Scenic photo stops"
-        ],
-        roadNote:
-            "Check the weather before riding and use safe, designated stopping areas for photos.",
-        imageUrl:
-            "https://ak-d.tripcdn.com/images/1mi0612000c4uv4sgB28E.jpg?proc=source%2Ftrip",
-        imageAlt:
-            "Wind turbines on the green hills of Pililla"
+        highlights: "Wind turbines, green hills, photo spots",
+        roadNote: "Check the weather before riding.",
+        imageUrl: "images/pililla.webp"
     },
-
     {
         name: "Mount Samat",
         province: "Bataan",
         roundTripKm: 240,
-        travelHoursMin: 3,
-        travelHoursMax: 4,
+        travelHours: "3-4 hours",
         budgetMin: 1100,
         budgetMax: 1700,
         difficulty: "Moderate",
-        difficultyClass: "moderate",
-        highlights: [
-            "Dambana ng Kagitingan",
-            "Mountain scenery",
-            "Historical landmarks"
-        ],
-        roadNote:
-            "Allow time for breaks and check visitor access and opening hours before departure.",
-        imageUrl:
-            "https://i0.wp.com/jayexiomo.com/wp-content/uploads/2024/04/img_3962.jpg?fit=1200%2C900&ssl=1",
-        imageAlt:
-            "The Shrine of Valor at Mount Samat in Bataan"
+        highlights: "Dambana ng Kagitingan, mountain scenery",
+        roadNote: "Check opening hours before departure.",
+        imageUrl: "images/mount-samat.webp"
     },
-
     {
         name: "Subic Bay",
         province: "Zambales",
         roundTripKm: 280,
-        travelHoursMin: 3,
-        travelHoursMax: 4.5,
+        travelHours: "3-4.5 hours",
         budgetMin: 1100,
         budgetMax: 1800,
         difficulty: "Moderate",
-        difficultyClass: "moderate",
-        highlights: [
-            "Waterfront views",
-            "Marina and boardwalk",
-            "Restaurants and cafes"
-        ],
-        roadNote:
-            "Check your route carefully and allow extra time for traffic and stops around the bay.",
-        imageUrl:
-            "https://mdw-travel-data-us-east-1.s3.amazonaws.com/img/country/Philippines/Subic-Bay-Yacht-Club/img_00.jpg",
-        imageAlt:
-            "Boats and waterfront scenery at Subic Bay Yacht Club"
+        highlights: "Waterfront views, cafes, restaurants",
+        roadNote: "Allow extra time for traffic.",
+        imageUrl: "images/subic.webp"
     },
-
     {
         name: "Laiya Beach",
-        province: "San Juan, Batangas",
+        province: "Batangas",
         roundTripKm: 300,
-        travelHoursMin: 3.5,
-        travelHoursMax: 4.5,
+        travelHours: "3.5-4.5 hours",
         budgetMin: 1300,
         budgetMax: 2100,
         difficulty: "Moderate",
-        difficultyClass: "moderate",
-        highlights: [
-            "Sandy beaches",
-            "Coastal scenery",
-            "Beach resorts"
-        ],
-        roadNote:
-            "Confirm resort entrance fees and parking costs before visiting. Some beaches have paid access.",
-        imageUrl:
-            "https://static.wixstatic.com/media/b04e45_74349198202c4dfaa6cf057bb3825c43~mv2.jpg/v1/fill/w_980%2Ch_735%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_avif%2Cquality_auto/Playa%20Laiya%20Beach%20Front%20Lot_JPG.jpg",
-        imageAlt:
-            "Sandy beach and blue water at Laiya in Batangas"
+        highlights: "Beaches, resorts, coastal scenery",
+        roadNote: "Check beach entrance and parking fees.",
+        imageUrl: "images/laiya.webp"
     },
-
     {
         name: "Liwliwa Beach",
-        province: "San Felipe, Zambales",
+        province: "Zambales",
         roundTripKm: 360,
-        travelHoursMin: 4,
-        travelHoursMax: 5.5,
+        travelHours: "4-5.5 hours",
         budgetMin: 1500,
         budgetMax: 2500,
         difficulty: "Challenging",
-        difficultyClass: "challenging",
-        highlights: [
-            "Surfing and beach views",
-            "Relaxed coastal atmosphere",
-            "Mountain scenery"
-        ],
-        roadNote:
-            "A longer ride. Check the weather, rest when tired, and avoid riding through the night.",
-        imageUrl:
-            "https://dessilverio.wordpress.com/wp-content/uploads/2019/10/no-watermark-surfing-skim-board-budget-beach-surf-mountain-backdrop-agoho-trees-like-pine-liwliwa-san-felipe-zambales.jpg?w=768",
-        imageAlt:
-            "Liwliwa Beach with surfers and mountains in the background"
+        highlights: "Surfing, beach views, mountain scenery",
+        roadNote: "Plan rest stops for this longer ride.",
+        imageUrl: "images/liwliwa.webp"
     },
-
     {
         name: "Baler",
         province: "Aurora",
         roundTripKm: 470,
-        travelHoursMin: 5.5,
-        travelHoursMax: 7,
+        travelHours: "5.5-7 hours",
         budgetMin: 2200,
         budgetMax: 3500,
         difficulty: "Challenging",
-        difficultyClass: "challenging",
-        highlights: [
-            "Sabang Beach",
-            "Surfing spots",
-            "Sierra Madre scenery"
-        ],
-        roadNote:
-            "Plan an overnight stay. Mountain sections can be steep and winding; check road and weather conditions.",
-        imageUrl:
-            "https://commons.wikimedia.org/wiki/Special:FilePath/Baler_Aurora.jpg?width=1200",
-        imageAlt:
-            "Coastal scenery in Baler, Aurora"
+        highlights: "Sabang Beach, surfing, coastal scenery",
+        roadNote: "An overnight stay is recommended.",
+        imageUrl: "images/baler.webp"
     },
-
     {
         name: "Baguio City",
         province: "Benguet",
         roundTripKm: 490,
-        travelHoursMin: 5,
-        travelHoursMax: 7,
+        travelHours: "5-7 hours",
         budgetMin: 2500,
         budgetMax: 3800,
         difficulty: "Challenging",
-        difficultyClass: "challenging",
-        highlights: [
-            "Cool mountain weather",
-            "Burnham Park",
-            "Pine-covered scenery"
-        ],
-        roadNote:
-            "Plan an overnight stay, check mountain weather, and allow enough time for rest and daylight riding.",
-        imageUrl:
-            "https://baguiotransient.net/_next/image?q=75&url=%2Fburnham.webp&w=3840",
-        imageAlt:
-            "Burnham Park in Baguio City"
+        highlights: "Cool weather, Burnham Park, mountain views",
+        roadNote: "Prepare for winding roads and changing weather.",
+        imageUrl: "images/baguio.webp"
     }
 ];
 
 
-/* ========================================
-   PAGE ELEMENTS
-======================================== */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const destinationGrid =
-        document.querySelector("#destination-grid");
-
-    const filterButtons =
-        document.querySelectorAll(".filter-button");
-
-    const resultsCount =
-        document.querySelector("#results-count");
-
-    // Stop if the destination elements are not on this page.
-    if (!destinationGrid || !resultsCount) {
-        return;
-    }
-
-    // Budget threshold for the Budget Friendly filter.
-    const budgetFriendlyLimit = 1500;
-
-    // Currency formatting.
-    function formatPeso(amount) {
-        return "₱" + amount.toLocaleString("en-PH");
-    }
-
-    // Escape text before inserting it into HTML.
-    function escapeHTML(value) {
-        return String(value).replace(/[&<>"']/g, function (character) {
-            const entities = {
-                "&": "&amp;",
-                "<": "&lt;",
-                ">": "&gt;",
-                '"': "&quot;",
-                "'": "&#39;"
-            };
-
-            return entities[character];
-        });
-    }
-
-
-    /* ========================================
-       CREATE A DESTINATION CARD
-    ======================================== */
-
-    function createDestinationCard(destination) {
-
-        const mapUrl = new URL(
-            "https://www.google.com/maps/dir/"
-        );
-
-        mapUrl.searchParams.set("api", "1");
-        mapUrl.searchParams.set(
-            "origin",
-            "Manila, Philippines"
-        );
-
-        mapUrl.searchParams.set(
-            "destination",
-            destination.name + ", " +
-            destination.province + ", Philippines"
-        );
-
-        mapUrl.searchParams.set("travelmode", "driving");
-
-        const highlights =
-            destination.highlights
-                .map(escapeHTML)
-                .join(" &bull; ");
-
-        return `
-            <section class="destination-card">
-
-                <img
-                    class="destination-image"
-                    src="${escapeHTML(destination.imageUrl)}"
-                    alt="${escapeHTML(destination.imageAlt)}"
-                    loading="lazy"
-                    decoding="async"
-                    width="800"
-                    height="500">
-
-                <div class="destination-card-content">
-
-                    <div class="destination-card-topline">
-                        <span class="destination-province">
-                            ${escapeHTML(destination.province)}
-                        </span>
-
-                        <span class="difficulty-tag ${destination.difficultyClass}">
-                            ${escapeHTML(destination.difficulty)}
-                        </span>
-                    </div>
-
-                    <h3>${escapeHTML(destination.name)}</h3>
-
-                    <p class="destination-highlights">
-                        ${highlights}
-                    </p>
-
-                    <dl class="destination-stats">
-
-                        <div>
-                            <dt>Round-trip distance</dt>
-                            <dd>
-                                ${destination.roundTripKm.toLocaleString("en-PH")} km
-                            </dd>
-                        </div>
-
-                        <div>
-                            <dt>One-way riding time</dt>
-                            <dd>
-                                ${destination.travelHoursMin}–${destination.travelHoursMax} hrs
-                            </dd>
-                        </div>
-
-                        <div class="budget-stat">
-                            <dt>Estimated budget per rider</dt>
-                            <dd>
-                                ${formatPeso(destination.budgetMin)}
-                                – ${formatPeso(destination.budgetMax)}
-                            </dd>
-                        </div>
-
-                    </dl>
-
-                    <p class="destination-road-note">
-                        <strong>Riding notes:</strong>
-                        ${escapeHTML(destination.roadNote)}
-                    </p>
-
-                    <a
-                        class="destination-map-link"
-                        href="${escapeHTML(mapUrl.toString())}"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        Open in Google Maps
-                    </a>
-
-                </div>
-
-            </section>
-        `;
-    }
-
-
-    /* ========================================
-       FILTER DESTINATIONS
-    ======================================== */
-
-    function filterDestinations(filterType) {
-
-        let filteredDestinations = destinations.slice();
-
-        switch (filterType) {
-
-            case "budget":
-                // Only show destinations with a budget
-                // range that stays within the threshold.
-                filteredDestinations =
-                    destinations.filter(function (destination) {
-                        return destination.budgetMax <= budgetFriendlyLimit;
-                    });
-
-                filteredDestinations.sort(function (a, b) {
-                    return a.budgetMin - b.budgetMin;
-                });
-
-                break;
-
-
-            case "nearest":
-                // Show the three shortest round-trip distances.
-                filteredDestinations.sort(function (a, b) {
-                    return a.roundTripKm - b.roundTripKm;
-                });
-
-                filteredDestinations =
-                    filteredDestinations.slice(0, 3);
-
-                break;
-
-
-            case "farthest":
-                // Show the three longest round-trip distances.
-                filteredDestinations.sort(function (a, b) {
-                    return b.roundTripKm - a.roundTripKm;
-                });
-
-                filteredDestinations =
-                    filteredDestinations.slice(0, 3);
-
-                break;
-
-
-            case "shortest":
-                // Show the three shortest estimated one-way rides.
-                filteredDestinations.sort(function (a, b) {
-                    return a.travelHoursMin - b.travelHoursMin;
-                });
-
-                filteredDestinations =
-                    filteredDestinations.slice(0, 3);
-
-                break;
-
-
-            case "longest":
-                // Show the three longest estimated one-way rides.
-                filteredDestinations.sort(function (a, b) {
-                    return b.travelHoursMax - a.travelHoursMax;
-                });
-
-                filteredDestinations =
-                    filteredDestinations.slice(0, 3);
-
-                break;
-
-
-            case "all":
-            default:
-                // Keep all nine destinations.
-                filteredDestinations = destinations.slice();
-        }
-
-
-        // Generate the HTML for the filtered destinations.
-        if (filteredDestinations.length > 0) {
-
-            destinationGrid.innerHTML =
-                filteredDestinations
-                    .map(createDestinationCard)
-                    .join("");
-
-        } else {
-
-            destinationGrid.innerHTML = `
-                <p class="no-results">
-                    No destinations match this filter.
-                    Try another option.
-                </p>
-            `;
-        }
-
-
-        // Update the result count.
-        resultsCount.textContent =
-            "Showing " + filteredDestinations.length +
-            " of " + destinations.length + " destinations.";
-    }
-
-
-    /* ========================================
-       FILTER BUTTON EVENTS
-    ======================================== */
-
-    filterButtons.forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
-            // Get the filter from the clicked button.
-            const selectedFilter = button.dataset.filter;
-
-            // Highlight the selected filter.
-            filterButtons.forEach(function (filterButton) {
-                filterButton.classList.remove("is-active");
-                filterButton.setAttribute("aria-pressed", "false");
-            });
-
-            button.classList.add("is-active");
-            button.setAttribute("aria-pressed", "true");
-
-            // Display the matching destination cards.
-            filterDestinations(selectedFilter);
-        });
-
+/* FILTER BUTTONS */
+
+const allLink = document.querySelector('[data-filter="all"]');
+const budgetLink = document.querySelector('[data-filter="budget"]');
+const nearestLink = document.querySelector('[data-filter="nearest"]');
+const farthestLink = document.querySelector('[data-filter="farthest"]');
+const shortestLink = document.querySelector('[data-filter="shortest"]');
+const longestLink = document.querySelector('[data-filter="longest"]');
+
+
+/* FILTER EVENTS */
+
+allLink.addEventListener("click", () => {
+    createDestinationCard(destinations);
+    setActiveFilter(allLink);
+});
+
+budgetLink.addEventListener("click", () => {
+    createDestinationCard(
+        destinations.filter(destination => destination.budgetMax <= 1500)
+    );
+    setActiveFilter(budgetLink);
+});
+
+nearestLink.addEventListener("click", () => {
+    createDestinationCard(
+        destinations.filter(destination => destination.roundTripKm <= 170)
+    );
+    setActiveFilter(nearestLink);
+});
+
+farthestLink.addEventListener("click", () => {
+    createDestinationCard(
+        destinations.filter(destination => destination.roundTripKm >= 360)
+    );
+    setActiveFilter(farthestLink);
+});
+
+shortestLink.addEventListener("click", () => {
+    createDestinationCard(
+        destinations.filter(destination =>
+            parseFloat(destination.travelHours) <= 2.5
+        )
+    );
+    setActiveFilter(shortestLink);
+});
+
+longestLink.addEventListener("click", () => {
+    createDestinationCard(
+        destinations.filter(destination => destination.roundTripKm >= 360)
+    );
+    setActiveFilter(longestLink);
+});
+
+
+/* SHOW SELECTED FILTER */
+
+function setActiveFilter(selectedButton) {
+    const filterButtons = document.querySelectorAll(".filter-button");
+
+    filterButtons.forEach(button => {
+        button.classList.remove("is-active");
+        button.setAttribute("aria-pressed", "false");
     });
 
+    selectedButton.classList.add("is-active");
+    selectedButton.setAttribute("aria-pressed", "true");
+}
 
-    /* ========================================
-       INITIAL PAGE LOAD
-    ======================================== */
 
-    filterDestinations("all");
+/* CREATE DESTINATION CARDS */
 
-});
+function createDestinationCard(destinations) {
+    document.querySelector(".destination-grid").innerHTML = "";
+
+    destinations.forEach(destination => {
+        let card = document.createElement("section");
+        let img = document.createElement("img");
+        let content = document.createElement("div");
+        let name = document.createElement("h3");
+        let province = document.createElement("p");
+        let difficulty = document.createElement("p");
+        let highlights = document.createElement("p");
+        let distance = document.createElement("p");
+        let hours = document.createElement("p");
+        let budget = document.createElement("p");
+        let roadNote = document.createElement("p");
+        let mapLink = document.createElement("a");
+
+        card.classList.add("destination-card");
+        img.classList.add("destination-image");
+        content.classList.add("destination-card-content");
+        province.classList.add("destination-province");
+        difficulty.classList.add("difficulty-tag");
+        highlights.classList.add("destination-highlights");
+        roadNote.classList.add("destination-road-note");
+        mapLink.classList.add("destination-map-link");
+
+        name.textContent = destination.name;
+        province.textContent = destination.province;
+        difficulty.textContent = destination.difficulty;
+
+        highlights.textContent =
+            "Highlights: " + destination.highlights;
+
+        distance.textContent =
+            "Round-trip distance: " + destination.roundTripKm + " km";
+
+        hours.textContent =
+            "Travel time: " + destination.travelHours;
+
+        budget.textContent =
+            "Budget: ₱" + destination.budgetMin +
+            "–₱" + destination.budgetMax;
+
+        roadNote.textContent =
+            "Riding notes: " + destination.roadNote;
+
+        img.setAttribute("src", destination.imageUrl);
+        img.setAttribute("alt", destination.name);
+        img.setAttribute("loading", "lazy");
+
+        mapLink.textContent = "Open in Google Maps";
+        mapLink.href =
+            "https://www.google.com/maps/dir/Manila/" +
+            destination.name + "/" + destination.province;
+
+        mapLink.setAttribute("target", "_blank");
+        mapLink.setAttribute("rel", "noopener noreferrer");
+
+        content.appendChild(province);
+        content.appendChild(difficulty);
+        content.appendChild(name);
+        content.appendChild(highlights);
+        content.appendChild(distance);
+        content.appendChild(hours);
+        content.appendChild(budget);
+        content.appendChild(roadNote);
+        content.appendChild(mapLink);
+
+        card.appendChild(img);
+        card.appendChild(content);
+
+        document.querySelector(".destination-grid").appendChild(card);
+    });
+}
+
+
+/* DISPLAY ALL DESTINATIONS FIRST */
+
+createDestinationCard(destinations);
